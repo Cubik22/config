@@ -7,6 +7,9 @@
 EDITOR=nvim
 VISUAL=nvim
 
+# where cargo install packages by default
+CARGO_HOME=/usr/local
+
 XKB_DEFAULT_LAYOUT=us
 #XKB_DEFAULT_LAYOUT=it
 # Dell Precision or XPS
@@ -29,9 +32,6 @@ DESKTOP_SESSION=river
 # seatd is more minimal
 LIBSEAT_BACKEND=seatd
 #LIBSEAT_BACKEND=logind
-
-# where cargo install packages by default
-CARGO_HOME=/usr/local
 
 # QT
 QT_QPA_PLATFORM=wayland-egl
