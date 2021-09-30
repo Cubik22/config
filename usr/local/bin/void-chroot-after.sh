@@ -11,6 +11,7 @@ echo
 username="lollo"
 
 directory="/root/config"
+backup="/root/backup"
 
 # clone bare repository
 git clone --bare https://github.com/cubik22/config "$directory"
@@ -20,6 +21,9 @@ config () {
 	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
+# backup of files
+echo "backing up pre-existing config files"
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$backup"/{}
 # checkout and copy files in the appropiate places
 config checkout
 
