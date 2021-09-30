@@ -21,11 +21,9 @@ config () {
 	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
-# backup of files
+# backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$backup"/{}
-# checkout and copy files in the appropiate places
-config checkout
 
 # set to not show untracked files
 config config status.showUntrackedFiles no
