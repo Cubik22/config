@@ -39,7 +39,7 @@ config push --set-upstream origin main
 
 # remove README from HOME and set git to not track in locale
 rm -f /README.md
-/usr/bin/git --git-dir="$directory"/ --work-tree="/" update-index --assume-unchanged /README.md
+config update-index --assume-unchanged /README.md
 
 # integrate alsa in pipewire
 mkdir -p /etc/alsa/conf.d
