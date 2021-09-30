@@ -26,6 +26,12 @@ config checkout
 # set to not show untracked files
 config config status.showUntrackedFiles no
 
+# where cargo install packages by default
+export CARGO_HOME=/usr/local
+
+# install rust bitwarden client
+cargo install rbw
+
 rbw unlock
 
 # set to track upstram 
@@ -92,9 +98,6 @@ echo "set password $username"
 passwd $username
 # set user default shell
 chsh -s /bin/bash $username
-
-# install rust bitwarden client
-cargo install rbw
 
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
