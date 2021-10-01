@@ -24,7 +24,7 @@ config () {
 
 # backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$backup"/{}
+config checkout 2>&1 | grep -P '\t' | awk {'print "/"$1'} | xargs -I{} mv {} "$backup"{}
 
 # set to not show untracked files
 config config status.showUntrackedFiles no
