@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "execute this script after installation and in chroot"
-echo "remember not to name this repository config otherwise there is a naming conflict
+echo "remember not to name this repository config otherwise there is a naming conflict"
 echo
 
 # wait for input
