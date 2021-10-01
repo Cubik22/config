@@ -84,7 +84,25 @@ touch /etc/sv/bluetoothd/down
 rfkill unblock bluetooth
 
 # create swap file
-dd if=/dev/zero of=/swapfile bs=1G count=4 status=progress
+echo "how many GiB do you want the swap file to be?"
+echo "1) 4GiB"
+echo "2) 8GiB"
+echo "3) 12GiB"
+echo "4) 16GiB"
+read swapsize
+if [ "$swapsize" = "1" ]; then
+	swapcount=4096
+elif [ "$swapsize" = "2" ]; then
+	swapcount=8192
+elif [ "$swapsize" = "3" ]; then
+	swapcount=12288
+elif [ "$swapsize" = "4" ]; then
+	swapcount=16384
+else
+	swapcount=4096
+fi
+echo "creating swap file of $swapcount MiB"
+dd if=/dev/zero of=/swapfile bs=1M count=$swapcount status=progress
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
