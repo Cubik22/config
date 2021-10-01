@@ -150,7 +150,7 @@ echo
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
-echo "remember to run 'xbps-reconfigure -fa' also after reboot"
+echo "remember to run 'xbps-reconfigure -fa' after having removed usb stick and also after reboot"
 echo "especially xbps-reconfigure -f linux{VERSION} which runs hooks"
 
 # exit chroot
