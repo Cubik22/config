@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "execute this script after installation and in chroot"
-echo "remember not to name this repository config otherwise there is a naming conflict"
+echo "name this repository /root/cloned-config otherwise the script cannot clone it"
 echo
 
 # wait for input
@@ -15,7 +15,7 @@ directory="/root/config"
 backup="/root/backup"
 
 # clone bare repository
-git clone --bare https://github.com/cubik22/config "$directory"
+git clone --bare /root/cloned-config "$directory"
 
 # create temporary alias
 config () {
@@ -29,16 +29,18 @@ config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} "$bac
 # set to not show untracked files
 config config status.showUntrackedFiles no
 
+# this part has to be done after because requires internet connection
+
 # where cargo install packages by default
-export CARGO_HOME=/usr/local
+#export CARGO_HOME=/usr/local
 
 # install rust bitwarden client
-cargo install rbw
+#cargo install rbw
 
-rbw unlock
+#rbw unlock
 
 # set to track upstram 
-config push --set-upstream origin main
+#config push --set-upstream origin main
 
 # remove README from HOME and set git to not track in locale
 rm -f /README.md
