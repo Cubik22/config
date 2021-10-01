@@ -142,9 +142,9 @@ echo "/swapfile none swap defaults 0 0" >> /etc/fstab
 
 echo
 echo "remember to edit /etc/fstab"
-echo "remove everything except / /boot tmpfs /swapfile"
-echo "set / and /boot to 0 1 and 0 2"
-echo "remove errors=remount-ro if using mkinitcpio"
+echo "remove everything except what do you want to mount like (/ /boot) and tmpfs /swapfile"
+echo "set / to 0 1 and other filesystem mounted (like /boot) to 0 2"
+echo "remove errors=remount-ro if using mkinitcpio (in void)"
 echo "use blkid to get UUID and set UUID= instead of path"
 echo
 
