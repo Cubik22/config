@@ -1,7 +1,10 @@
 # GRUB boot loader configuration
 
 GRUB_DEFAULT=saved
-GRUB_TIMEOUT=5
+# time before displaying menu press hotkey associated with a menu entry
+GRUB_HIDDEN_TIMEOUT=0
+GRUB_TIMEOUT=0
+#GRUB_TIMEOUT=5
 #GRUB_DISTRIBUTOR="Arch"
 #GRUB_DISTRIBUTOR="Artix"
 GRUB_DISTRIBUTOR="Void"
