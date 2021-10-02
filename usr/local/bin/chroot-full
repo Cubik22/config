@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	mount_dir=$1
+else
+	mount_dir="/mnt"
+fi
+
+if [ -z "$2" ]; then
+	mount_shell=$2
+else
+	mount_shell="/bin/bash"
+
+echo "mount directory is $mount_dir"
+echo "mount shell is $mount_shell"
+
+echo "mounting /sys"
+mount --rbind /sys "$mount_dir"/sys && mount --make-rslave "$mount_dir"/sys
+echo "mounting /dev"
+mount --rbind /dev "$mount_dir"/dev && mount --make-rslave "$mount_dir"/dev
+echo "mounting /proc"
+mount --rbind /proc "$mount_dir"/proc && mount --make-rslave "$mount_dir"/proc
+
+echo "entering chroot"
+PS1="\[\e[1;31m\]\w\[\e[m\] " chroot "$mount_dir" "$mount_shell"
