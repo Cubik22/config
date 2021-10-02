@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#echo "have you cloned this repository already in /mnt (/mnt/root)?"
+echo "have you cloned this repository already in /mnt (/mnt/root)?"
 echo "have you mounted /mnt and /mnt/boot and other partitions?"
 echo "if reinstalling remember to clean stuff in /mnt/boot"
 echo "run this script from the directory it is in (cloned-config/usr/local/bin"

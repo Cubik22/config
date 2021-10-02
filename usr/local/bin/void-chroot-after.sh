@@ -12,7 +12,6 @@ echo
 username="lollo"
 
 directory="/root/config"
-backup="/root/backup"
 
 # clone bare repository
 git clone --bare /root/cloned-config "$directory"
@@ -24,7 +23,7 @@ config () {
 
 # backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
-config checkout 2>&1 | grep -P '\t' | awk {'print $1'} | xargs -i sh -c 'mkdir -pv "$backup/""$(dirname {})"; mv "/"{} "$backup/"{};'
+config checkout 2>&1 | grep -P '\t' | awk {'print $1'} | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
 echo "checking out"
 config checkout
 
@@ -128,7 +127,7 @@ chsh -s /bin/bash $username
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
 # install grub
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Void
 
 # after changing /etc/default/grub run update-grub
 
