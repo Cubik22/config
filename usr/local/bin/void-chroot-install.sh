@@ -1,8 +1,9 @@
 #!/bin/sh
 
-#echo "have you cloned this repository already in /mnt (/mnt/root)?"
+echo "have you cloned this repository already in /mnt (/mnt/root)?"
 echo "have you mounted /mnt and /mnt/boot and other partitions?"
 echo "if reinstalling remember to clean stuff in /mnt/boot"
+echo "run this script from the directory it is in (usr/local/bin)"
 echo "if download of packages is slow stop the script and edit it choosing a faster repo (1, 2 or 3)"
 echo
 
