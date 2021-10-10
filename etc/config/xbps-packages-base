@@ -122,6 +122,7 @@ exa
 bat
 nvme-cli
 trash-cli
+dialog
 nnn
 htop
 upower
