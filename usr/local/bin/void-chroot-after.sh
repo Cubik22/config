@@ -66,6 +66,10 @@ ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 #ln -sf /usr/share/zoneinfo/Etc/GMT+2 /etc/localtime
 #ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
+# link nerd fonts
+mkdir -p /usr/share/fonts/nerd
+ln -s /etc/config/fonts/nerd/* /usr/share/fonts/nerd/
+
 # link services
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
@@ -75,17 +79,31 @@ ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
+ln -s /etc/sv/tlp /etc/runit/runsvdir/default/
 
 # set unused tty not to start by default
 touch /etc/sv/agetty-tty6/down
 touch /etc/sv/agetty-tty5/down
 touch /etc/sv/agetty-tty4/down
 
-# set bluetooth not to start by default
+# set bluetooth and tlp not to start by default
 touch /etc/sv/bluetoothd/down
+touch /etc/sv/tlp/down
 
 # make sure bluetooth is unblocked
 rfkill unblock bluetooth
+
+# do not use bitmap fonts
+rm -f /etc/fonts/conf.d/10-scale-bitmap-fonts.conf
+rm -f /etc/fonts/conf.d/70-yes-bitmaps.conf
+
+# font config
+ln -s /usr/share/fontconfig/conf.avail/10-hinting-slight.conf /etc/fonts/conf.d/
+ln -s /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
+ln -s /usr/share/fontconfig/conf.avail/25-unhint-nonlatin.conf /etc/fonts/conf.d/
+ln -s /usr/share/fontconfig/conf.avail/50-user.conf /etc/fonts/conf.d/
+ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 # create swap file
 echo "how many GiB do you want the swap file to be?"
