@@ -142,6 +142,10 @@ passwd $username
 # set user default shell
 chsh -s /bin/bash $username
 
+# install rust
+rustup-init
+rustup default stable
+
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
 # install grub

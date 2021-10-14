@@ -5,10 +5,13 @@
 #
 
 # editor
-EDITOR=nvim
-VISUAL=nvim
+EDITOR=kak
+VISUAL=kak
+# EDITOR=nvim
+# VISUAL=nvim
 
-# where cargo install packages by default
+# home for the installation of rust and cargo packages
+RUSTUP_HOME=/usr/local
 CARGO_HOME=/usr/local
 
 # keyboard and layout

@@ -44,11 +44,13 @@ clang-tools-extra
 cmake
 spdlog
 meson
-rust
-cargo
+editorconfig
+rustup
+rust-analyzer
 zig
 go
 python3
+python3-language-server
 python3-pip
 nodejs
 bash-completion
@@ -61,6 +63,8 @@ zsh-history-substring-search
 zoxide
 shellcheck
 checkbashisms
+kak
+kak-lsp
 neovim
 openntpd
 iwd
@@ -123,6 +127,7 @@ bat
 nvme-cli
 trash-cli
 dialog
+broot
 nnn
 htop
 upower
