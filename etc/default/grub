@@ -2,9 +2,9 @@
 
 GRUB_DEFAULT=saved
 # time before displaying menu press hotkey associated with a menu entry
-GRUB_HIDDEN_TIMEOUT=0
-GRUB_TIMEOUT=0
-#GRUB_TIMEOUT=5
+# GRUB_HIDDEN_TIMEOUT=0
+# GRUB_TIMEOUT=0
+GRUB_TIMEOUT=5
 #GRUB_DISTRIBUTOR="Arch"
 #GRUB_DISTRIBUTOR="Artix"
 GRUB_DISTRIBUTOR="Void"
@@ -30,10 +30,13 @@ GRUB_DISTRIBUTOR="Void"
 # disable automatic assembly of LVM, MD raids, DM raids and crypto LUKS  
 # rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0"
 
+# hibernate with swap file (not working)
+# resume=989cd13b-15fd-4461-b649-82cf64f22302 resume_offset=757760
+
 # arch linux stuff
 #GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nowatchdog mem_sleep_default=deep"
 
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 net.ifnames=0 reboot=pci"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 net.ifnames=0 reboot=pci mem_sleep_default=deep"
 
 GRUB_CMDLINE_LINUX=""
 
