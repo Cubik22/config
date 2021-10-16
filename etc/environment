@@ -11,15 +11,15 @@ VISUAL=kak
 # VISUAL=nvim
 
 # home for the installation of rust and cargo packages
-RUSTUP_HOME=/usr/local
-CARGO_HOME=/usr/local
+export RUSTUP_HOME=/usr/local/lib/rustup
+export CARGO_HOME=/usr/local/lib/cargo
 
 # keyboard and layout
 XKB_DEFAULT_LAYOUT=us
 #XKB_DEFAULT_LAYOUT=it
 # Dell Precision or XPS
-#XKB_DEFAULT_MODEL=precision_m
-#XKB_DEFAULT_VARIANT=basic
+XKB_DEFAULT_MODEL=precision_m
+XKB_DEFAULT_VARIANT=basic
 
 # old stuff
 ##QT_PLUGIN_PATH=/usr/lib/qt/plugins
