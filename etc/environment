@@ -10,6 +10,10 @@ VISUAL=kak
 # EDITOR=nvim
 # VISUAL=nvim
 
+# pager
+export PAGER=less
+export LESS='-F -g -i -R -w'
+
 # home for the installation of rust and cargo packages
 export RUSTUP_HOME=/usr/local/lib/rustup
 export CARGO_HOME=/usr/local/lib/cargo

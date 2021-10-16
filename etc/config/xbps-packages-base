@@ -26,8 +26,16 @@ intel-ucode
 iucode-tool
 base-devel
 man-pages
-man-pages-devel
 man-pages-posix
+man-pages-devel
+pigz
+pbzip2
+pixz
+lrzip
+lz4
+lzip
+plzip
+atool
 scdoc
 sysfsutils
 psmisc
@@ -71,6 +79,7 @@ iwd
 openresolv
 alsa-firmware
 alsa-utils
+alsa-plugins-ffmpeg
 pulseaudio-utils
 pipewire
 alsa-pipewire
@@ -118,6 +127,7 @@ foot
 wob
 grim
 slurp
+dragon
 wget
 ripgrep
 fd
@@ -128,6 +138,8 @@ nvme-cli
 trash-cli
 dialog
 broot
+expect
+pmount
 nnn
 htop
 upower
@@ -136,6 +148,7 @@ tlp
 powertop
 ncdu
 ffmpeg
+ffmpegthumbnailer
 imv
 mpv
 zathura
