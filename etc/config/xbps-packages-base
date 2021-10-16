@@ -129,8 +129,10 @@ grim
 slurp
 dragon
 wget
-ripgrep
 fd
+pdfgrep
+ripgrep
+the_silver_searcher
 fzf
 exa
 bat
