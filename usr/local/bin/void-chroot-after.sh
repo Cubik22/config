@@ -59,6 +59,12 @@ chmod -c 0400 /etc/doas.conf
 # link doas to sudo
 ln -s /usr/bin/doas /usr/bin/sudo
 
+# runtime dir
+runtime_dir="/run/user/$(id -u)"
+mkdir -p "$runtime_dir"
+chown "$runtime_dir"
+chmod 700 "$runtime_dir"
+
 # set timezone
 # if BIOS/UEFI clock is already set to the correct time use UTC
 # if using OpenNTPD set the correct time zone
