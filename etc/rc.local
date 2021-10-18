@@ -6,6 +6,7 @@
 # make runtime directory
 mkdir /run/user/0
 # make sure the id is right (also look config in /etc/login.defs)
+# when changing id change in /usr/local/bin/wl-*-env
 idu="1000"
 mkdir "/run/user/$idu"
 chown "$idu:$idu" "/run/user/$idu"

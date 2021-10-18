@@ -142,7 +142,7 @@ passwd root
 chsh -s /bin/bash root
 
 # create user
-useradd -m -G wheel,audio,video,input,bluetooth,_seatd $username
+useradd -m -G wheel,audio,video,input,bluetooth,_seatd,adbusers $username
 echo "set password $username"
 passwd $username
 # set user default shell
@@ -173,12 +173,17 @@ echo "remove everything except what do you want to mount like (/ /boot) and tmpf
 echo "set / to 0 1 and other filesystem mounted (like /boot) to 0 2"
 echo "remove errors=remount-ro if using mkinitcpio (in void)"
 echo "use blkid to get UUID and set UUID= instead of path"
-echo
 
 # ensure all installed packages are configured properly
 #xbps-reconfigure -fa
+echo
 echo "remember to run 'xbps-reconfigure -fa' after having removed usb stick and also after reboot"
 echo "especially xbps-reconfigure -f linux{VERSION} which runs hooks"
+
+# android
+echo
+echo "edit /etc/udev/rules.d/51-android.rules for android devices"
+echo "run lsusb for vendor id and product id"
 
 # exit chroot
 #exit

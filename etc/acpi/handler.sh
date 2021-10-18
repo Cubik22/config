@@ -4,22 +4,18 @@
 # NOTE: This is a 2.6-centric script.  If you use 2.4.x, you'll have to
 #       modify it to not use /sys
 
-minspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq`
-maxspeed=`cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq`
+# $1 should be + or - to step up or down the brightness.
+step_backlight() {
+    for backlight in /sys/class/backlight/*/; do
+        [ -d "$backlight" ] || continue
+        step=$(( $(cat "$backlight/max_brightness") / 20 ))
+        printf '%s' "$(( $(cat "$backlight/brightness") $1 step ))" >"$backlight/brightness"
+    done
+}
+
+minspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq)
+maxspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq)
 setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
-
-set $*
-
-PID=$(pgrep dbus-launch)
-export USER=$(ps -o user --no-headers $PID)
-USERHOME=$(getent passwd $USER | cut -d: -f6)
-#export XAUTHORITY="$USERHOME/.Xauthority"
-#for x in /tmp/.X11-unix/*; do
-#    displaynum=`echo $x | sed s#/tmp/.X11-unix/X##`
-#    if [ x"$XAUTHORITY" != x"" ]; then
-#        export DISPLAY=":$displaynum"
-#    fi
-#done
 
 case "$1" in
     button/power)

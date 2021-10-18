@@ -1,0 +1,6 @@
+# lsusb to find vendor id e product id
+# ID [idVendor]:[idProduct]
+# user home is at /storage/self/primary/
+SUBSYSTEM=="usb", ATTR{idVendor}=="[2717]", MODE="0660", GROUP="adbusers"
+SUBSYSTEM=="usb",ATTR{idVendor}=="[2717]",ATTR{idProduct}=="[ff48]",SYMLINK+="android_adb"
+SUBSYSTEM=="usb",ATTR{idVendor}=="[2717]",ATTR{idProduct}=="[ff48]",SYMLINK+="android_fastboot"
