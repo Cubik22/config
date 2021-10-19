@@ -18,6 +18,9 @@ LESS="-F -g -i -R -w"
 RUSTUP_HOME="/usr/local/lib/rustup"
 CARGO_HOME="/usr/local/lib/cargo"
 
+# info on keyboard setup
+# man xkeyboard-config
+
 # keyboard and layout
 XKB_DEFAULT_LAYOUT="us"
 # XKB_DEFAULT_LAYOUT="it"
