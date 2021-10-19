@@ -88,6 +88,7 @@ ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
 ln -s /etc/sv/tlp /etc/runit/runsvdir/default/
 
 # set unused tty not to start by default
+# remember to change also TTYS in /etc/rc.conf
 touch /etc/sv/agetty-tty6/down
 touch /etc/sv/agetty-tty5/down
 touch /etc/sv/agetty-tty4/down
