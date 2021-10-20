@@ -156,6 +156,7 @@ ffmpeg
 ffmpegthumbnailer
 imv
 mpv
+mpv-mpris
 zathura
 zathura-pdf-mupdf
 wordgrinder
