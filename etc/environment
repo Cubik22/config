@@ -4,20 +4,6 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
-# editor
-EDITOR="kak"
-VISUAL="kak"
-# EDITOR="nvim"
-# VISUAL="nvim"
-
-# pager
-PAGER="less"
-LESS="-F -g -i -R -w"
-
-# home for the installation of rust and cargo packages
-RUSTUP_HOME="/usr/local/lib/rustup"
-CARGO_HOME="/usr/local/lib/cargo"
-
 # info on keyboard setup
 # man xkeyboard-config
 
@@ -32,7 +18,26 @@ XKB_DEFAULT_VARIANT="altgr-intl"
 XKB_DEFAULT_MODEL="precision_m"
 
 # map caps lock to escape and shift + caps lock to caps lock
-XKB_DEFAULT_OPTIONS="caps:escape_shifted_capslock"
+# remap "< >" key which is extra in us iso layout
+
+# remap "< >" key to enter level 2 (shift)
+XKB_DEFAULT_OPTIONS="caps:escape_shifted_capslock,lv2:lsgt_switch"
+# remap "< >" key to compose key
+# XKB_DEFAULT_OPTIONS="caps:escape_shifted_capslock,compose:102"
+
+# editor
+EDITOR="kak"
+VISUAL="kak"
+# EDITOR="nvim"
+# VISUAL="nvim"
+
+# pager
+PAGER="less"
+LESS="-F -g -i -R -w"
+
+# home for the installation of rust and cargo packages
+RUSTUP_HOME="/usr/local/lib/rustup"
+CARGO_HOME="/usr/local/lib/cargo"
 
 # old stuff
 ##QT_PLUGIN_PATH="/usr/lib/qt/plugins"
