@@ -112,7 +112,6 @@ wayland
 wayland-utils
 wayland-protocols
 wlroots
-xorg-server-xwayland
 glfw-wayland
 qt5-wayland
 qt6-wayland
@@ -157,6 +156,7 @@ ffmpegthumbnailer
 imv
 mpv
 mpv-mpris
+youtube-dl
 zathura
 zathura-pdf-mupdf
 wordgrinder
