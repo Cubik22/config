@@ -5,7 +5,8 @@ echo "name this repository /root/cloned-config otherwise the script cannot clone
 echo
 
 # wait for input
-read -p "press any key to continue... " input
+printf "press any key to continue... "
+read input
 echo
 
 # set variables

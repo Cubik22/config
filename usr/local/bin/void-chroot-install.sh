@@ -8,7 +8,8 @@ echo "if download of packages is slow stop the script and edit it choosing a fas
 echo
 
 # wait for input
-read -p "press any key to continue... " input
+printf "press any key to continue... "
+read input
 echo
 
 # set xbps variables
