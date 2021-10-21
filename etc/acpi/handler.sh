@@ -27,8 +27,8 @@ case "$1" in
 		    	#shutdown -P now
 		    	logger "PowerButton pressed"
 		    	# echo "PowerButton pressed: $2" > /dev/tty3
-		    	echo "$HOME" > /dev/tty3
 
+				# make sure to fork in the background (&) otherwise pidof does not work
 		    	/usr/local/bin/waylock-env "sudoconf" &
 		    	;;
             *)
@@ -96,6 +96,8 @@ case "$1" in
 		open)
     		logger "LID opened"
 			# echo "LID opened" > /dev/tty3
+
+			# make sure to fork in the background (&) otherwise pidof does not work
 		    /usr/local/bin/waylock-env "sudoconf" &
 		;;
 		*)
