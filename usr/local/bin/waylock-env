@@ -1,0 +1,15 @@
+#!/bin/sh
+# so that can also be used as root
+if pidof -x "waylock" -o $$ >/dev/null; then
+	exit 1
+fi
+
+export XDG_RUNTIME_DIR=/run/user/1000
+export WAYLAND_DISPLAY=wayland-1
+
+if [ "$#" -eq 1 ] && [ "$1" = "sudoconf" ]; then
+    shift 1
+    waylock --config /root/.config/waylock/waylock.toml "$@"
+else
+    waylock "$@"
+fi

@@ -8,8 +8,9 @@
 step_backlight() {
     for backlight in /sys/class/backlight/*/; do
         [ -d "$backlight" ] || continue
-        step=$(( $(cat "$backlight/max_brightness") / 20 ))
-        printf '%s' "$(( $(cat "$backlight/brightness") $1 step ))" >"$backlight/brightness"
+        max_brightness="$(cat "$backlight"/max_brightness)"
+        step=$(( max_brightness / 20 ))
+        printf '%s' "$( ( $max_brightness "$1" $step ) )" >"$backlight/brightness"
     done
 }
 
@@ -22,22 +23,29 @@ case "$1" in
         #echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
-		    #logger "PowerButton pressed: $2, shutting down..."
-		    #shutdown -P now
-		    logger "PowerButton pressed"
-		    echo "PowerButton pressed: $2" > /dev/tty3 
-	    ;;
-            *)      logger "ACPI action undefined: $2" ;;
+		    	#logger "PowerButton pressed: $2, shutting down..."
+		    	#shutdown -P now
+		    	logger "PowerButton pressed"
+		    	echo "PowerButton pressed: $2" > /dev/tty3
+		    	echo "$HOME" > /dev/tty3
+
+		    	/usr/local/bin/waylock-env "sudoconf" &
+		    	;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     button/sleep)
         case "$2" in
             SBTN|SLPB)
-		    # suspend-to-ram
-		    logger "Sleep Button pressed: $2, suspending..."
-		    zzz
-		    ;;
-            *)      logger "ACPI action undefined: $2" ;;
+		    	# suspend-to-ram
+		    	logger "Sleep Button pressed: $2, suspending..."
+		    	zzz
+		    	;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     ac_adapter)
@@ -45,16 +53,18 @@ case "$1" in
             AC|ACAD|ADP0)
                 case "$4" in
                     00000000)
-                        echo -n $minspeed >$setspeed
+                        echo "$minspeed" >"$setspeed"
                         #/etc/laptop-mode/laptop-mode start
                     ;;
                     00000001)
-                        echo -n $maxspeed >$setspeed
+                        echo "$maxspeed" >"$setspeed"
                         #/etc/laptop-mode/laptop-mode stop
                     ;;
                 esac
                 ;;
-            *)  logger "ACPI action undefined: $2" ;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     battery)
@@ -69,7 +79,9 @@ case "$1" in
                 ;;
             CPU0)
                 ;;
-            *)  logger "ACPI action undefined: $2" ;;
+            *)
+                logger "ACPI action undefined: $2"
+                ;;
         esac
         ;;
     button/lid)
@@ -81,13 +93,17 @@ case "$1" in
 			logger "LID closed"
 			echo "LID closed" > /dev/tty3
 		;;
-		open)	logger "LID opened"
+		open)
+    		logger "LID opened"
 			echo "LID opened" > /dev/tty3
+		    /usr/local/bin/waylock-env "sudoconf" &
 		;;
-		*) logger "ACPI action undefined (LID): $2";;
+		*)
+    		logger "ACPI action undefined (LID): $2"
+    		;;
 	esac
 	;;
     *)
-	logger "ACPI group/action undefined: $1 / $2"
-    ;;
+		logger "ACPI group/action undefined: $1 / $2"
+    	;;
 esac
