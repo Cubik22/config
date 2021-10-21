@@ -26,7 +26,7 @@ case "$1" in
 		    	#logger "PowerButton pressed: $2, shutting down..."
 		    	#shutdown -P now
 		    	logger "PowerButton pressed"
-		    	echo "PowerButton pressed: $2" > /dev/tty3
+		    	# echo "PowerButton pressed: $2" > /dev/tty3
 		    	echo "$HOME" > /dev/tty3
 
 		    	/usr/local/bin/waylock-env "sudoconf" &
@@ -71,9 +71,9 @@ case "$1" in
         case "$2" in
             BAT0)
                 case "$4" in
-                    00000000)   #echo "offline" >/dev/tty5
+                    00000000)   #echo "offline" >/dev/tty3
                     ;;
-                    00000001)   #echo "online"  >/dev/tty5
+                    00000001)   #echo "online"  >/dev/tty3
                     ;;
                 esac
                 ;;
@@ -91,11 +91,11 @@ case "$1" in
 			#logger "LID closed, suspending..."
 			#zzz
 			logger "LID closed"
-			echo "LID closed" > /dev/tty3
+			# echo "LID closed" > /dev/tty3
 		;;
 		open)
     		logger "LID opened"
-			echo "LID opened" > /dev/tty3
+			# echo "LID opened" > /dev/tty3
 		    /usr/local/bin/waylock-env "sudoconf" &
 		;;
 		*)
