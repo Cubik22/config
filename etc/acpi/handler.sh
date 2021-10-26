@@ -10,6 +10,8 @@ step_backlight() {
         [ -d "$backlight" ] || continue
         max_brightness="$(cat "$backlight"/max_brightness)"
         step=$(( max_brightness / 20 ))
+        # fallback if gradation is too low
+        [ "$step" -gt "1" ] || step=1
         printf '%s' "$( ( $max_brightness "$1" $step ) )" >"$backlight/brightness"
     done
 }

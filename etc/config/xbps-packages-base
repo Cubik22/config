@@ -57,6 +57,7 @@ rustup
 rust-analyzer
 zig
 go
+R
 python3
 python3-language-server
 python3-pip
