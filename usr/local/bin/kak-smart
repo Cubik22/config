@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# cd if directory
+# open with kak if file
+
+# has to be sourced otherwise cd does not work
+
+if [ "$#" -le 0 ]; then
+    echo "please insert a parameter: directory or file"
+    return 1
+fi
+
+arg="$1"
+
+if [ -d "$arg" ]; then
+    cd "$arg"
+elif [ -f "$arg" ]; then
+    kak "$arg"
+else
+    # if is not an existing directory or file
+    # if nevertheless exists then do not open it
+    # if it does not exists then can be opened as a file by kak
+    if [ -e "$arg" ]; then
+        echo "the argument exists but is neither a directory or file"
+        ls --color=auto --human-readable -l "$arg"
+        file "$arg"
+    else
+        kak "$arg"
+    fi
+fi
