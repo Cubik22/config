@@ -22,11 +22,11 @@ setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 
 case "$1" in
     button/power)
-        #echo "PowerButton pressed!">/dev/tty5
+        # echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
-		    	#logger "PowerButton pressed: $2, shutting down..."
-		    	#shutdown -P now
+		    	# logger "PowerButton pressed: $2, shutting down..."
+		    	# shutdown -P now
 		    	logger "PowerButton pressed"
 		    	# echo "PowerButton pressed: $2" > /dev/tty3
 
@@ -56,11 +56,11 @@ case "$1" in
                 case "$4" in
                     00000000)
                         echo "$minspeed" >"$setspeed"
-                        #/etc/laptop-mode/laptop-mode start
+                        # /etc/laptop-mode/laptop-mode start
                     ;;
                     00000001)
                         echo "$maxspeed" >"$setspeed"
-                        #/etc/laptop-mode/laptop-mode stop
+                        # /etc/laptop-mode/laptop-mode stop
                     ;;
                 esac
                 ;;
@@ -73,9 +73,9 @@ case "$1" in
         case "$2" in
             BAT0)
                 case "$4" in
-                    00000000)   #echo "offline" >/dev/tty3
+                    00000000)   # echo "offline" >/dev/tty3
                     ;;
-                    00000001)   #echo "online"  >/dev/tty3
+                    00000001)   # echo "online"  >/dev/tty3
                     ;;
                 esac
                 ;;
@@ -90,10 +90,16 @@ case "$1" in
 	case "$3" in
 		close)
 			# suspend-to-ram
-			#logger "LID closed, suspending..."
-			#zzz
+			# logger "LID closed, suspending..."
+			# zzz
 			logger "LID closed"
 			# echo "LID closed" > /dev/tty3
+
+			# if waylock is running kill it
+			# will be run again when opening lid
+			if pidof -x "waylock" -o $$ >/dev/null; then
+    			killall waylock
+			fi
 		;;
 		open)
     		logger "LID opened"
