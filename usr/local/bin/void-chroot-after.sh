@@ -34,15 +34,15 @@ config config status.showUntrackedFiles no
 # this part has to be done after because requires internet connection
 
 # where cargo install packages by default
-#export CARGO_HOME=/usr/local
+# export CARGO_HOME=/usr/local
 
 # install rust bitwarden client
-#cargo install rbw
+# cargo install rbw
 
 #rbw unlock
 
 # set to track upstram 
-#config push --set-upstream origin main
+# config push --set-upstream origin main
 
 # remove README from HOME and set git to not track in locale
 rm -f /README.md
@@ -69,9 +69,9 @@ chmod 700 "$runtime_dir"
 # set timezone
 # if BIOS/UEFI clock is already set to the correct time use UTC
 # if using OpenNTPD set the correct time zone
-ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
-#ln -sf /usr/share/zoneinfo/Etc/GMT+2 /etc/localtime
-#ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
+ln -sf /usr/share/zoneinfo/Etc/GMT-1 /etc/localtime
+# ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # link nerd fonts
 mkdir -p /usr/share/fonts/nerd
@@ -177,7 +177,7 @@ echo "remove errors=remount-ro if using mkinitcpio (in void)"
 echo "use blkid to get UUID and set UUID= instead of path"
 
 # ensure all installed packages are configured properly
-#xbps-reconfigure -fa
+# xbps-reconfigure -fa
 echo
 echo "remember to run 'xbps-reconfigure -fa' after having removed usb stick and also after reboot"
 echo "especially xbps-reconfigure -f linux{VERSION} which runs hooks"
@@ -188,7 +188,7 @@ echo "edit /etc/udev/rules.d/51-android.rules for android devices"
 echo "run lsusb for vendor id and product id"
 
 # exit chroot
-#exit
+# exit
 # reboot with shutdown or normal
-#shutdown -r now
-#reboot
+# shutdown -r now
+# reboot
