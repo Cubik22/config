@@ -36,7 +36,6 @@ echo "ignorepkg=nvi" 						>> $ignorefile
 echo "ignorepkg=vim"						>> $ignorefile
 echo "ignorepkg=gvim"						>> $ignorefile
 
-
 repo1="https://alpha.de.repo.voidlinux.org/current/musl"
 repo2="https://mirrors.servercentral.com/voidlinux/current/musl"
 repo3="https://alpha.us.repo.voidlinux.org/current/musl"
@@ -51,8 +50,8 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-devel)
 
 # in order to have network (set manually after)
-#cp /etc/resolv.conf /mnt/etc/resolv.conf
-#cp /etc/hosts /mnt/etc/hosts
+# cp /etc/resolv.conf /mnt/etc/resolv.conf
+# cp /etc/hosts /mnt/etc/hosts
 
 # mount pseudo-filesystems
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
