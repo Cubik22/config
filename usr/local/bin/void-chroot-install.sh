@@ -20,18 +20,22 @@ ignorefile="$xbpsconf"/ignorepkg.conf
 mkdir -p $xbpsconf
 
 # set packages to be ignored as dependecy
-echo "ignorepkg=sudo" > $ignorefile
-echo "ignorepkg=btrfs-progs" >> $ignorefile
-echo "ignorepkg=xfsprogs" >> $ignorefile
-echo "ignorepkg=f2fs-tools" >> $ignorefile
-echo "ignorepkg=wpa_supplicant" >> $ignorefile
-echo "ignorepkg=dhcpcd" >> $ignorefile
-echo "ignorepkg=NetworkManager" >> $ignorefile
-echo "ignorepkg=connman" >> $ignorefile
-echo "ignorepkg=pulseaudio" >> $ignorefile
-echo "ignorepkg=nvi" >> $ignorefile
-echo "ignorepkg=linux-firmware-amd" >> $ignorefile
-#echo "ignorepkg=linux-firmware-nvidia" >> $ignorefile
+# also add in /etc/xbps.d/ignorepkg.conf
+echo "ignorepkg=linux-firmware-amd" 		 > $ignorefile
+echo "# ignorepkg=linux-firmware-nvidia" 	>> $ignorefile
+echo "ignorepkg=sudo" 						>> $ignorefile
+echo "ignorepkg=btrfs-progs" 				>> $ignorefile
+echo "ignorepkg=xfsprogs" 					>> $ignorefile
+echo "ignorepkg=f2fs-tools" 				>> $ignorefile
+echo "ignorepkg=wpa_supplicant" 			>> $ignorefile
+echo "ignorepkg=dhcpcd" 					>> $ignorefile
+echo "ignorepkg=NetworkManager" 			>> $ignorefile
+echo "ignorepkg=connman" 					>> $ignorefile
+echo "ignorepkg=pulseaudio" 				>> $ignorefile
+echo "ignorepkg=nvi" 						>> $ignorefile
+echo "ignorepkg=vim"						>> $ignorefile
+echo "ignorepkg=gvim"						>> $ignorefile
+
 
 repo1="https://alpha.de.repo.voidlinux.org/current/musl"
 repo2="https://mirrors.servercentral.com/voidlinux/current/musl"
