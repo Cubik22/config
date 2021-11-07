@@ -18,3 +18,4 @@ fmt-devel
 eudev-libudev-devel
 glib-devel
 libnl3-devel
+libcurl-devel
