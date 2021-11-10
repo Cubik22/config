@@ -43,11 +43,17 @@ repo3="https://alpha.us.repo.voidlinux.org/current/musl"
 # install non free repository in order to install intel-ucode
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 void-repo-nonfree
 
-# install basic packages
+# install normal base packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-base)
 
-# install devel packages
+# install octave base packages
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-octave-base)
+
+# install normal devel packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-devel)
+
+# install octave devel packages
+# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-octave-devel)
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf

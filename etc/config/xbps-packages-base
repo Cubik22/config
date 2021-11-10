@@ -28,6 +28,10 @@ base-devel
 man-pages
 man-pages-posix
 man-pages-devel
+gperf
+tar
+zip
+unzip
 pigz
 pbzip2
 pixz
@@ -46,6 +50,7 @@ gnupg
 pinentry
 grub-x86_64-efi
 git
+gcc-fortran
 clang
 clang-analyzer
 clang-tools-extra
@@ -165,9 +170,6 @@ wordgrinder
 sc-im
 newsboat
 syncthing
-octave
-gnuplot
-ghostscript
 firefox
 android-file-transfer-linux
 android-tools
