@@ -11,6 +11,7 @@ glpk-deve
 qt5-plugin-sqlite
 texinfo
 openblas-devel
+lapack-devel
 arpack-ng-devel
 libsndfile-devel
 portaudio-devel
