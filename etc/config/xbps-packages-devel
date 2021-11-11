@@ -8,14 +8,5 @@ freetype-devel
 libinput-devel
 wayland-devel
 wlroots-devel
-libxkbcommon-devel
-libevdev-devel
-pixman-devel
-gtkmm-devel
-jsoncpp-devel
-libsigc++-devel	
-fmt-devel
-eudev-libudev-devel
 glib-devel
-libnl3-devel
 libcurl-devel

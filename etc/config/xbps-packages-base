@@ -119,6 +119,8 @@ wayland
 wayland-utils
 wayland-protocols
 wlroots
+glu
+glew
 glfw-wayland
 qt5-wayland
 qt6-wayland

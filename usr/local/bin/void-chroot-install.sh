@@ -53,6 +53,12 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 # install normal devel packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-devel)
 
+# install river devel packages
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-river-devel)
+
+# install waybar devel packages
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-waybar-devel)
+
 # install octave devel packages
 # echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-octave-devel)
 
