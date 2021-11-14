@@ -1,0 +1,48 @@
+/* reduce titlebar */
+.window-frame,
+.window-frame:backdrop,
+.default-decoration,
+.default-decoration:backdrop,
+.default-decoration .titlebutton,
+.default-decoration:backdrop .titlebutton,
+.titlebar,
+.titlebar:backdrop,
+headerbar,
+headerbar:backdrop,
+headerbar.titlebar,
+headerbar.titlebar:backdrop,
+headerbar entry,
+headerbar:backdrop entry,
+headerbar spinbutton,
+headerbar:backdrop spinbutton,
+headerbar button,
+headerbar:backdrop button,
+headerbar separator,
+headerbar:backdrop separator,
+window.ssd headerbar.titlebar,
+window.ssd:backdrop headerbar.titlebar,
+.ssd .titlebar,
+.ssd:backdrop .titlebar {
+    min-height: 0px;
+    min-width: 0px;
+	/*max-height: 0px;*/
+	/*max-width: 0px;*/
+	/*height: 0px;*/
+	/*width: 0px;*/
+	margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
+    border: none;
+    border-style: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0;
+    background-image: none;
+    /*opacity: 0;*/
+    /*color: transparent;*/
+	color: rgb(1,1,1);
+    /*color: #ebdbb2;*/
+    /*background-color: transparent;*/
+    background-color: rgb(0,0,0);
+    /*background-color: #1d2021;*/
+}
