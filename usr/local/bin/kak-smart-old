@@ -13,7 +13,7 @@ fi
 arg="$1"
 
 if [ -d "$arg" ]; then
-    cd "$arg"
+    cd "$arg" || return 1
 elif [ -f "$arg" ]; then
     kak "$arg"
 else

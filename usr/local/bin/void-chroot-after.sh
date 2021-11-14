@@ -6,7 +6,7 @@ echo
 
 # wait for input
 printf "press any key to continue... "
-read input
+read -r input
 echo
 
 # set variables
@@ -24,7 +24,7 @@ config () {
 
 # backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
-config checkout 2>&1 | grep -P '\t' | awk {'print $1'} | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
+config checkout 2>&1 | grep -P '\t' | awk '{print $1}' | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
 echo "checking out"
 config checkout
 
@@ -39,7 +39,7 @@ config config status.showUntrackedFiles no
 # install rust bitwarden client
 # cargo install rbw
 
-#rbw unlock
+# rbw unlock
 
 # set to track upstram 
 # config push --set-upstream origin main
@@ -119,7 +119,7 @@ echo "1) 4GiB"
 echo "2) 8GiB"
 echo "3) 12GiB"
 echo "4) 16GiB"
-read swapsize
+read -r swapsize
 if [ "$swapsize" = "1" ]; then
 	swapcount=4096
 elif [ "$swapsize" = "2" ]; then

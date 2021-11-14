@@ -10,6 +10,7 @@ if [ -z "$2" ]; then
 	mount_shell=$2
 else
 	mount_shell="/bin/bash"
+fi
 
 echo "mount directory is $mount_dir"
 echo "mount shell is $mount_shell"

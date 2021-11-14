@@ -9,7 +9,7 @@ echo
 
 # wait for input
 printf "press any key to continue... "
-read input
+read -r input
 echo
 
 # set xbps variables
@@ -17,26 +17,28 @@ xbpsconf=/mnt/etc/xbps.d
 ignorefile="$xbpsconf"/ignorepkg.conf
 
 # create xbpsconf directory
-mkdir -p $xbpsconf
+mkdir -p "$xbpsconf"
 
 # set packages to be ignored as dependecy
 # also add in /etc/xbps.d/ignorepkg.conf
-echo "# add also in /usr/local/bin/void-chroot-install.sh"  >  $ignorefile
-echo "ignorepkg=linux-firmware-amd" 		                >> $ignorefile
-echo "# ignorepkg=linux-firmware-nvidia" 	                >> $ignorefile
-echo "ignorepkg=sudo" 						                >> $ignorefile
-echo "ignorepkg=btrfs-progs" 				                >> $ignorefile
-echo "ignorepkg=xfsprogs" 					                >> $ignorefile
-echo "ignorepkg=f2fs-tools" 				                >> $ignorefile
-echo "ignorepkg=wpa_supplicant" 			                >> $ignorefile
-echo "ignorepkg=dhcpcd" 					                >> $ignorefile
-echo "ignorepkg=NetworkManager" 			                >> $ignorefile
-echo "ignorepkg=connman" 					                >> $ignorefile
-echo "ignorepkg=pulseaudio" 				                >> $ignorefile
-echo "ignorepkg=nvi" 						                >> $ignorefile
-echo "ignorepkg=vim"						                >> $ignorefile
-echo "ignorepkg=gvim"						                >> $ignorefile
-echo "ignorepkg=xorg-server-xwayland"                       >> $ignorefile
+cat << EOF > "$ignorefile"
+# add also in /usr/local/bin/void-chroot-install.sh
+ignorepkg=linux-firmware-amd
+# ignorepkg=linux-firmware-nvidia
+ignorepkg=sudo
+ignorepkg=btrfs-progs
+ignorepkg=xfsprogs
+ignorepkg=f2fs-tools
+ignorepkg=wpa_supplicant
+ignorepkg=dhcpcd
+ignorepkg=NetworkManager
+ignorepkg=connman
+ignorepkg=pulseaudio
+ignorepkg=nvi
+ignorepkg=vim
+ignorepkg=gvim
+ignorepkg=xorg-server-xwayland
+EOF
 
 repo1="https://alpha.de.repo.voidlinux.org/current/musl"
 repo2="https://mirrors.servercentral.com/voidlinux/current/musl"
@@ -46,23 +48,23 @@ repo3="https://alpha.us.repo.voidlinux.org/current/musl"
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 void-repo-nonfree
 
 # install normal base packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-base)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-base)"
 
 # install octave base packages
 # missing qrupdate
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-octave-base)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-octave-base)"
 
 # install normal devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-devel)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-devel)"
 
 # install river devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-river-devel)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-river-devel)"
 
 # install waybar devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-waybar-devel)
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-waybar-devel)"
 
 # install octave devel packages
-# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 $(cat ../../../etc/config/xbps-packages-octave-devel)
+# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-octave-devel)"
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf
