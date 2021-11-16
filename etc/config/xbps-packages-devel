@@ -1,4 +1,5 @@
 musl-devel
+ncurses-devel
 glib-devel
 libcurl-devel
 pipewire-devel
