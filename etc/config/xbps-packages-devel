@@ -1,6 +1,10 @@
 musl-devel
 ncurses-devel
 glib-devel
+lua-devel
+python3-devel
+nodejs-devel
+bash-devel
 libcurl-devel
 pipewire-devel
 alsa-lib-devel

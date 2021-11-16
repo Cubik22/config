@@ -61,9 +61,10 @@ zig
 go
 gcc-go
 gcc-fortran
-R
+lua
 python3
 python3-language-server
+R
 nodejs
 bash
 bash-completion
@@ -76,7 +77,7 @@ zsh-history-substring-search
 zoxide
 shellcheck
 checkbashisms
-kak
+kakoune
 kak-lsp
 neovim
 alsa-utils
