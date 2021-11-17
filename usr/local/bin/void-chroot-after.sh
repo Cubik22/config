@@ -151,7 +151,10 @@ passwd $username
 chsh -s /bin/bash $username
 
 # install rust
+export RUSTUP_HOME="/usr/local/lib/rustup"
+export CARGO_HOME="/usr/local/lib/cargo"
 rustup-init
+export PATH="/usr/local/lib/cargo/bin:${PATH}"
 rustup default stable
 
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)

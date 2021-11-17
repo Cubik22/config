@@ -35,10 +35,6 @@ VISUAL="kak"
 PAGER="less"
 LESS="-F -g -i -R -w"
 
-# home for the installation of rust and cargo packages
-RUSTUP_HOME="/usr/local/lib/rustup"
-CARGO_HOME="/usr/local/lib/cargo"
-
 # old stuff
 ##QT_PLUGIN_PATH="/usr/lib/qt/plugins"
 #JAVA_FONTS="/usr/share/fonts/TTF"
