@@ -33,11 +33,10 @@ VISUAL="kak"
 
 # pager
 PAGER="less"
-LESS="-F -g -i -R -w"
 
 # old stuff
-##QT_PLUGIN_PATH="/usr/lib/qt/plugins"
-#JAVA_FONTS="/usr/share/fonts/TTF"
-##_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
-#MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"
-#MATLAB_LOG_DIR="{insert_path}"
+# # QT_PLUGIN_PATH="/usr/lib/qt/plugins"
+# JAVA_FONTS="/usr/share/fonts/TTF"
+# # _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
+# MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"
+# MATLAB_LOG_DIR="{insert_path}"
