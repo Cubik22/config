@@ -34,6 +34,16 @@ VISUAL="kak"
 # pager
 PAGER="less"
 
+# home for the installation of rust and cargo packages
+RUSTUP_HOME="/usr/local/lib/rustup"
+CARGO_HOME="/usr/local/lib/cargo"
+
+# go
+GOPATH="/usr/local/lib/go"
+
+# npm
+# NPM_CONFIG_GLOBALCONFIG="/etc/npmrc"
+
 # old stuff
 # # QT_PLUGIN_PATH="/usr/lib/qt/plugins"
 # JAVA_FONTS="/usr/share/fonts/TTF"

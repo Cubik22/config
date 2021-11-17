@@ -66,6 +66,9 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 # install waybar devel packages
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-waybar-devel)"
 
+# install cargo devel packages
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-cargo-devel)"
+
 # install octave devel packages
 # echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-octave-devel)"
 
