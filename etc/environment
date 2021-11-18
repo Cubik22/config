@@ -25,6 +25,8 @@ XKB_DEFAULT_OPTIONS="caps:escape_shifted_capslock,lv2:lsgt_switch"
 # remap "< >" key to compose key
 # XKB_DEFAULT_OPTIONS="caps:escape_shifted_capslock,compose:102"
 
+# when adding variables here also add to /etc/doas.conf
+
 # editor
 EDITOR="kak"
 VISUAL="kak"
