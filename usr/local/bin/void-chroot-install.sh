@@ -44,6 +44,8 @@ repo1="https://alpha.de.repo.voidlinux.org/current/musl"
 repo2="https://mirrors.servercentral.com/voidlinux/current/musl"
 repo3="https://alpha.us.repo.voidlinux.org/current/musl"
 
+packages_folder="../../../etc/config/xbps-packages"
+
 # install non free repository in order to install intel-ucode
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 void-repo-nonfree
 
@@ -51,26 +53,26 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 intel-ucode
 
 # install normal base packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-base)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/base)"
 
 # install octave base packages
 # missing qrupdate
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-octave-base)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/octave-base)"
 
 # install normal devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-devel)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/devel)"
 
 # install river devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-river-devel)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/river-devel)"
 
 # install waybar devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-waybar-devel)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/waybar-devel)"
 
 # install cargo devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-cargo-devel)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/cargo-devel)"
 
 # install octave devel packages
-# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat ../../../etc/config/xbps-packages-octave-devel)"
+# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 "$(cat $packages_folder/octave-devel)"
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf
