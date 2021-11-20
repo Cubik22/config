@@ -13,6 +13,7 @@ pulseaudio-devel
 libbluetooth-devel
 freetype-devel
 libinput-devel
+lowdown-devel
 wayland-devel
 wlroots-devel
 glu-devel
