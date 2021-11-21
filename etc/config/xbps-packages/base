@@ -47,6 +47,7 @@ dcron
 opendoas
 gnupg
 pinentry
+pinentry-tty
 grub-x86_64-efi
 git
 clang
