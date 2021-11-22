@@ -132,7 +132,7 @@ else
 	swapcount=4096
 fi
 echo "creating swap file of $swapcount MiB"
-dd if=/dev/zero of=/swapfile bs=1M count=$swapcount status=progress
+dd if=/dev/zero of=/swapfile bs=1M count="$swapcount" status=progress
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
@@ -144,11 +144,11 @@ passwd root
 chsh -s /bin/bash root
 
 # create user
-useradd -m -G wheel,audio,video,input,bluetooth,_seatd,adbusers $username
+useradd -m -G wheel,audio,video,input,bluetooth,_seatd,adbusers "$username"
 echo "set password $username"
-passwd $username
+passwd "$username"
 # set user default shell
-chsh -s /bin/bash $username
+chsh -s /bin/bash "$username"
 
 # install rust
 export RUSTUP_HOME="/usr/local/lib/rustup"
