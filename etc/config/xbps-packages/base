@@ -17,6 +17,7 @@ openntpd
 traceroute
 ethtool
 kmod
+geoip
 wifi-firmware
 void-artwork
 acpid
@@ -55,6 +56,8 @@ clang-analyzer
 clang-tools-extra
 cmake
 spdlog
+ccache
+crypto++
 meson
 editorconfig
 rustup

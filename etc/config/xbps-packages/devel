@@ -1,4 +1,5 @@
 musl-devel
+binutils-devel
 ncurses-devel
 glib-devel
 lua-devel
@@ -14,8 +15,14 @@ libbluetooth-devel
 freetype-devel
 libinput-devel
 lowdown-devel
+gettext-devel
 wayland-devel
 wlroots-devel
 glu-devel
 glew-devel
 glfw-devel
+libfreeglut-devel
+crypto++-devel
+libupnp-devel
+gd-devel
+geoip-devel
