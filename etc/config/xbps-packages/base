@@ -66,6 +66,10 @@ zig
 go
 gcc-go
 gcc-fortran
+openjdk
+openjdk-src
+openjdk11
+openjdk11-src
 lua
 python3
 python3-language-server

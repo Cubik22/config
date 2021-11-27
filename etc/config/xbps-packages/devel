@@ -7,10 +7,9 @@ python3-devel
 nodejs-devel
 bash-devel
 libcurl-devel
-pipewire-devel
 alsa-lib-devel
-alsa-tools-devel
 pulseaudio-devel
+pipewire-devel
 libbluetooth-devel
 freetype-devel
 libinput-devel
