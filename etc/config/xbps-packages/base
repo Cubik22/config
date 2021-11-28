@@ -128,9 +128,6 @@ wlroots
 glu
 glew
 glfw-wayland
-qt5-wayland
-qt6-wayland
-gtk3-nocsd
 wtype
 wlr-randr
 wl-clipboard
@@ -168,6 +165,7 @@ nnn
 wordgrinder
 sc-im
 newsboat
+weechat
 syncthing
 lowdown
 zathura
