@@ -1,2 +1,2 @@
 # config
-My config files for Arch/Artix/Void with Wayland
+My config files for Void Linux with Wayland
