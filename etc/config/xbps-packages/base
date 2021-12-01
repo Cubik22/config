@@ -170,6 +170,9 @@ syncthing
 lowdown
 zathura
 zathura-pdf-mupdf
+zathura-ps
+zathura-djvu
+zathura-cb
 poppler
 ImageMagick
 catimg
