@@ -178,6 +178,7 @@ zathura-pdf-mupdf
 zathura-ps
 zathura-djvu
 zathura-cb
+poppler-utils
 ImageMagick
 catimg
 viu
