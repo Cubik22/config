@@ -74,6 +74,10 @@ lua
 python3
 python3-language-server
 R
+texlive-basic
+texlive-PythonTeX
+texlive-science
+texlab
 nodejs
 bash
 bash-completion
