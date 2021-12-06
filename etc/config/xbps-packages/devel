@@ -6,7 +6,6 @@ lua-devel
 python3-devel
 nodejs-devel
 bash-devel
-libcurl-devel
 alsa-lib-devel
 pulseaudio-devel
 pipewire-devel
@@ -21,6 +20,7 @@ glu-devel
 glew-devel
 glfw-devel
 libfreeglut-devel
+libcurl-devel
 crypto++-devel
 libupnp-devel
 gd-devel

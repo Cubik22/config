@@ -50,7 +50,9 @@ gnupg
 pinentry
 pinentry-tty
 grub-x86_64-efi
+perl
 git
+mercurial
 clang
 clang-analyzer
 clang-tools-extra
@@ -73,6 +75,8 @@ openjdk11-src
 lua
 python3
 python3-language-server
+python3-pip
+python3-wheel
 R
 texlive-basic
 texlive-PythonTeX

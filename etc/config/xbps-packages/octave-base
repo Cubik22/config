@@ -1,8 +1,9 @@
 octave
 ghostscript
+rapidjson
 openblas
 lapack
-pcre
+pcre2
 readline
 arpack-ng
 curl

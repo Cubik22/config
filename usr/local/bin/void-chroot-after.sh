@@ -86,6 +86,7 @@ ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
+# ln -s /etc/sv/wireguard /etc/runit/runsvdir/default/
 ln -s /etc/sv/tlp /etc/runit/runsvdir/default/
 
 # set unused tty not to start by default
