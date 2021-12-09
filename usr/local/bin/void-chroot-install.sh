@@ -40,39 +40,39 @@ ignorepkg=gvim
 ignorepkg=xorg-server-xwayland
 EOF
 
-repo1="https://alpha.de.repo.voidlinux.org/current/musl"
-repo2="https://repo-fi.voidlinux.org/current/musl"
-repo3="https://mirrors.servercentral.com/voidlinux/current/musl"
-repo4="https://repo-us.voidlinux.org/current/musl"
+repo1="https://alpha.de.repo.voidlinux.org/current"
+repo2="https://repo-fi.voidlinux.org/current"
+repo3="https://mirrors.servercentral.com/voidlinux/current"
+repo4="https://repo-us.voidlinux.org/current"
 
 packages_folder="../../../etc/config/xbps-packages"
 
 # install non free repository in order to install intel-ucode
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 void-repo-nonfree
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 void-repo-nonfree
 
 # install intel-ucode
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 intel-ucode
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 intel-ucode
 
 # install normal base packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/base)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/base)"
 
 # install octave base packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-base)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-base)"
 
 # install normal devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/devel)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/devel)"
 
 # install river devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/river-devel)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/river-devel)"
 
 # install waybar devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/waybar-devel)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/waybar-devel)"
 
 # install cargo devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/cargo-devel)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/cargo-devel)"
 
 # install octave devel packages
-echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-devel)"
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-devel)"
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf
