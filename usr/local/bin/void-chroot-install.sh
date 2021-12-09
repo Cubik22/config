@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "have you cloned this repository already in /mnt (/mnt/root)?"
+echo "have you cloned this repository in /mnt (/mnt/root/cloned-config)?"
 echo "have you mounted /mnt and /mnt/boot and other partitions?"
 echo "if reinstalling remember to clean stuff in /mnt/boot"
 echo "run this script from the directory it is in (cloned-config/usr/local/bin)"
@@ -57,7 +57,6 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/base)"
 
 # install octave base packages
-# missing qrupdate
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-base)"
 
 # install normal devel packages
@@ -73,7 +72,7 @@ echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $
 echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/cargo-devel)"
 
 # install octave devel packages
-# echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-devel)"
+echo | XBPS_ARCH=x86_64-musl xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 "$(cat $packages_folder/octave-devel)"
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf

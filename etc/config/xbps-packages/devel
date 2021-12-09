@@ -1,7 +1,7 @@
-musl-devel
+glibc-devel
+glib-devel
 binutils-devel
 ncurses-devel
-glib-devel
 lua-devel
 python3-devel
 nodejs-devel
