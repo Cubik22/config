@@ -31,19 +31,6 @@ config checkout
 # set to not show untracked files
 config config status.showUntrackedFiles no
 
-# this part has to be done after because requires internet connection
-
-# where cargo install packages by default
-# export CARGO_HOME=/usr/local
-
-# install rust bitwarden client
-# cargo install rbw
-
-# rbw unlock
-
-# set to track upstram 
-# config push --set-upstream origin main
-
 # remove README from HOME and set git to not track in locale
 rm -f /README.md
 config update-index --assume-unchanged /README.md
@@ -63,8 +50,8 @@ ln -s /usr/bin/doas /usr/bin/sudo
 # runtime dir
 runtime_dir="/run/user/$(id -u)"
 mkdir -p "$runtime_dir"
-chown "$runtime_dir"
-chmod 700 "$runtime_dir"
+chown -c root:root "$runtime_dir"
+chmod -c 700 "$runtime_dir"
 
 # set timezone
 # if BIOS/UEFI clock is already set to the correct time use UTC
@@ -152,13 +139,6 @@ passwd "$username"
 # set user default shell
 chsh -s /bin/bash "$username"
 
-# install rust
-export RUSTUP_HOME="/usr/local/lib/rustup"
-export CARGO_HOME="/usr/local/lib/cargo"
-rustup-init
-export PATH="/usr/local/lib/cargo/bin:${PATH}"
-rustup default stable
-
 # edit /etc/default/grub (set GRUB_DISTRIBUTOR)
 
 # install grub
@@ -178,8 +158,13 @@ echo
 echo "remember to edit /etc/fstab"
 echo "remove everything except what do you want to mount like (/ /boot) and tmpfs /swapfile"
 echo "set / to 0 1 and other filesystem mounted (like /boot) to 0 2"
+echo "leave tmpfs and /swapfile to 0 0"
 echo "remove errors=remount-ro if using mkinitcpio (in void)"
 echo "use blkid to get UUID and set UUID= instead of path"
+
+# locales
+echo "uncomment locales in /etc/default/libc-locales"
+echo "then generate locales with: xbps-reconfigure -f glibc-locales"
 
 # ensure all installed packages are configured properly
 # xbps-reconfigure -fa
