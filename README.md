@@ -21,3 +21,9 @@ PS1="(chroot)# " chroot /mnt/ /bin/bash
 cd /root/cloned-config
 
 usr/local/bin/void-chroot-after.sh
+
+# after reboot
+
+cd /root/cloned-config
+
+usr/local/bin/void-chroot-finish.sh
