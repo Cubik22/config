@@ -1,9 +1,4 @@
 ghostscript-devel
-pkg-config
-texinfo
-texlive-dvi
-icoutils
-librsvg-utils
 libSM-devel
 libltdl-devel
 lcms2-devel

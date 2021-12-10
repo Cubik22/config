@@ -56,20 +56,11 @@ echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3
 # install normal base packages
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/base)
 
-# install octave base packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/octave-base)
-
 # install normal devel packages
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/devel)
 
-# install river devel packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/river-devel)
-
-# install waybar devel packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/waybar-devel)
-
-# install cargo devel packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/cargo-devel)
+# install octave base packages
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/octave-base)
 
 # install octave devel packages
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/octave-devel)

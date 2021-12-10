@@ -1,4 +1,6 @@
 ghostscript
+icoutils
+librsvg-utils
 rapidjson
 openblas
 lapack

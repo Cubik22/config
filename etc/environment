@@ -12,7 +12,7 @@ XKB_DEFAULT_LAYOUT="us"
 # XKB_DEFAULT_LAYOUT="it"
 
 # special keys with altgr
-XKB_DEFAULT_VARIANT="altgr-intl"
+# XKB_DEFAULT_VARIANT="altgr-intl"
 
 # Dell Precision or XPS
 XKB_DEFAULT_MODEL="precision_m"

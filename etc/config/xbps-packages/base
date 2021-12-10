@@ -27,6 +27,7 @@ linux-headers
 base-devel
 mdocml
 scdoc
+texinfo
 man-pages
 man-pages-posix
 man-pages-devel
@@ -61,6 +62,9 @@ spdlog
 ccache
 crypto++
 meson
+ninja
+tllist
+cairo
 editorconfig
 rustup
 rust-analyzer
@@ -141,8 +145,8 @@ wlr-randr
 wl-clipboard
 wlsunset
 waylock
-foot
-fuzzel
+wev
+fcft
 wob
 grim
 slurp
