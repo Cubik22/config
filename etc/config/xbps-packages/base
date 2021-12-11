@@ -31,6 +31,7 @@ texinfo
 man-pages
 man-pages-posix
 man-pages-devel
+man-db
 gperf
 zip
 unzip
@@ -181,6 +182,7 @@ wordgrinder
 sc-im
 newsboat
 weechat
+neomutt
 syncthing
 lowdown
 zathura
