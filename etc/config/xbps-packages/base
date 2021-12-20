@@ -48,7 +48,7 @@ psmisc
 xtools
 dcron
 opendoas
-gnupg
+gnupg2
 pinentry
 pinentry-tty
 grub-x86_64-efi
@@ -183,6 +183,8 @@ sc-im
 newsboat
 weechat
 neomutt
+isync
+msmtp
 rtorrent
 rsync
 syncthing
