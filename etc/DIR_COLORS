@@ -15,9 +15,9 @@
 # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 
 # text color codes normal:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white/orange
 # text color codes bright:
-# 90=black 91=red 92=green 93=yellow 94=blue 95=magenta 96=cyan 97=white
+# 90=black 91=red 92=green 93=yellow 94=blue 95=magenta 96=cyan 97=white/orange
 
 # background color codes normal:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
@@ -209,15 +209,15 @@ EXEC  1;30;32
 .wmv 01;33
 
 # documents
-.doc 01;91
-.ppt 01;91
-.xls 01;91
-.docx 01;91
-.pptx 01;91
-.xlsx 01;91
-.odt 01;91
-.ods 01;91
-.odp 01;91
-.pdf 01;91
-.djvu 01;91
-.md 01;91
+.doc 01;97
+.ppt 01;97
+.xls 01;97
+.docx 01;97
+.pptx 01;97
+.xlsx 01;97
+.odt 01;97
+.ods 01;97
+.odp 01;97
+.pdf 01;97
+.djvu 01;97
+.md 01;97
