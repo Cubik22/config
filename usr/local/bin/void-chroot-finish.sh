@@ -38,8 +38,8 @@ rustup default stable
 cargo install cargo-update rbw
 
 # link rbw rbw-agent for doas config
-ln -s /usr/local/lib/cargo/bin/rbw /usr/local/bin/
-ln -s /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
+ln -sf /usr/local/lib/cargo/bin/rbw /usr/local/bin/
+ln -sf /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
 
 # rbw register
 # rbw unlock
