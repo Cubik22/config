@@ -1,8 +1,6 @@
-#!bin/sh
+#!/bin/sh
 
 # set variables
-username="lollo"
-
 directory="/root/config"
 
 # create temporary alias
@@ -10,11 +8,8 @@ config () {
 	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
-# rbw register
-# rbw unlock
-
-# set to track upstram 
-# config push --set-upstream https://github.com/"$username"/config main
+# set to track upstram
+config push --set-upstream https://github.com/lbia/config main
 
 # import gpg key
 # echo "------------------------ type the number of your identity -------------------------"
@@ -48,6 +43,9 @@ cargo install cargo-update rbw
 # link rbw rbw-agent for doas config
 ln -s /usr/local/lib/cargo/bin/rbw /usr/local/bin/
 ln -s /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
+
+# rbw register
+# rbw unlock
 
 # java (for octave)
 # ln -s /usr/lib/jvm/openjdk11/lib/server/libjvm.so /usr/lib/jvm/openjdk11/lib/
