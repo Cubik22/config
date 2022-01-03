@@ -8,9 +8,6 @@ config () {
 	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
-# set to track upstram
-config push --set-upstream https://github.com/lbia/config main
-
 # import gpg key
 # echo "------------------------ type the number of your identity -------------------------"
 # gpg --search-keys $email
@@ -46,6 +43,9 @@ ln -s /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
 
 # rbw register
 # rbw unlock
+
+# set to track upstram
+# config push --set-upstream https://github.com/lbia/config main
 
 # java (for octave)
 # ln -s /usr/lib/jvm/openjdk11/lib/server/libjvm.so /usr/lib/jvm/openjdk11/lib/
