@@ -134,10 +134,15 @@ font-material-design-icons-ttf
 seatd
 libinput
 libinput-gestures
+xdot
+doxygen
+xmlto
+xmltoman
+Vulkan-Headers
+Vulkan-Tools
 wayland
 wayland-utils
 wayland-protocols
-wlroots
 glu
 glew
 glfw-wayland

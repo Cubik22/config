@@ -15,8 +15,9 @@ freetype-devel
 libinput-devel
 lowdown-devel
 gettext-devel
+libxslt-devel
 wayland-devel
-wlroots-devel
+libseat-devel
 glu-devel
 glew-devel
 glfw-devel
