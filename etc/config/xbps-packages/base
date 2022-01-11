@@ -180,6 +180,12 @@ wordgrinder
 sc-im
 newsboat
 weechat
+weechat-aspell
+weechat-lua
+weechat-perl
+weechat-python
+weechat-ruby
+weechat-tcl
 neomutt
 isync
 msmtp
