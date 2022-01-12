@@ -60,9 +60,11 @@ chmod -c 700 "$runtime_dir"
 ln -sf /usr/share/zoneinfo/Etc/GMT-1 /etc/localtime
 # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
+# cp nerd fonts
+cp -r /etc/config/fonts/nerd /usr/share/fonts
 # link nerd fonts
-mkdir -p /usr/share/fonts/nerd
-ln -s /etc/config/fonts/nerd/* /usr/share/fonts/nerd/
+# mkdir -p /usr/share/fonts/nerd
+# ln -s /etc/config/fonts/nerd/* /usr/share/fonts/nerd/
 
 # link services
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/

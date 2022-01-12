@@ -124,6 +124,7 @@ fonts-roboto-ttf
 liberation-fonts-ttf
 font-awesome5
 font-material-design-icons-ttf
+fonttools
 seatd
 libinput
 libinput-gestures
