@@ -11,6 +11,7 @@ alsa-lib-devel
 pulseaudio-devel
 pipewire-devel
 libbluetooth-devel
+pam-devel
 freetype-devel
 libinput-devel
 lowdown-devel
