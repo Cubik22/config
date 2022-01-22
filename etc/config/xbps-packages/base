@@ -159,6 +159,7 @@ bat
 wireguard
 pv
 fd
+plocate
 pdfgrep
 ripgrep
 the_silver_searcher
