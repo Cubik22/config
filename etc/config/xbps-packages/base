@@ -173,7 +173,6 @@ expect
 udisks2
 pmount
 ncdu
-htop
 upower
 lm_sensors
 tlp
