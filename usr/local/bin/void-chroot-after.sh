@@ -19,7 +19,7 @@ git clone --bare /root/cloned-config "$directory"
 
 # create temporary alias
 config () {
-	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
+    /usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
 # backup of configs while copying files in the appropiate places
@@ -112,15 +112,15 @@ echo "3) 12GiB"
 echo "4) 16GiB"
 read -r swapsize
 if [ "$swapsize" = "1" ]; then
-	swapcount=4096
+    swapcount=4096
 elif [ "$swapsize" = "2" ]; then
-	swapcount=8192
+    swapcount=8192
 elif [ "$swapsize" = "3" ]; then
-	swapcount=12288
+    swapcount=12288
 elif [ "$swapsize" = "4" ]; then
-	swapcount=16384
+    swapcount=16384
 else
-	swapcount=4096
+    swapcount=4096
 fi
 echo "creating swap file of $swapcount MiB"
 dd if=/dev/zero of=/swapfile bs=1M count="$swapcount" status=progress

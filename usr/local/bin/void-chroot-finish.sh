@@ -5,7 +5,7 @@ directory="/root/config"
 
 # create temporary alias
 config () {
-	/usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
+    /usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
 }
 
 # import gpg key

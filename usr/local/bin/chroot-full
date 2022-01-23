@@ -1,15 +1,15 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-	mount_dir=$1
+    mount_dir=$1
 else
-	mount_dir="/mnt"
+    mount_dir="/mnt"
 fi
 
 if [ -z "$2" ]; then
-	mount_shell=$2
+    mount_shell=$2
 else
-	mount_shell="/bin/bash"
+    mount_shell="/bin/bash"
 fi
 
 echo "mount directory is $mount_dir"

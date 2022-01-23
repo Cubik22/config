@@ -4,7 +4,7 @@
 
 # if waylock is already running exit
 if pidof -x "waylock" -o $$ >/dev/null; then
-	return 1
+    return 1
 fi
 
 export XDG_RUNTIME_DIR=/run/user/1000
