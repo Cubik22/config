@@ -19,6 +19,7 @@ ethtool
 kmod
 geoip
 wifi-firmware
+openssh
 void-artwork
 acpid
 eudev
@@ -78,6 +79,7 @@ openjdk-src
 openjdk11
 openjdk11-src
 lua
+luarocks
 python3
 python3-language-server
 python3-pip

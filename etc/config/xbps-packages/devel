@@ -44,4 +44,5 @@ fmt-devel
 eudev-libudev-devel
 libnl3-devel
 librsvg-devel
+mpv-devel
 weechat-devel
