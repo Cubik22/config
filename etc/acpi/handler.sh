@@ -25,14 +25,15 @@ case "$1" in
         # echo "PowerButton pressed!">/dev/tty5
         case "$2" in
             PBTN|PWRF)
-		    	# logger "PowerButton pressed: $2, shutting down..."
-		    	# shutdown -P now
-		    	logger "PowerButton pressed"
-		    	# echo "PowerButton pressed: $2" > /dev/tty3
+                # logger "PowerButton pressed: $2, shutting down..."
+                # shutdown -P now
+                logger "PowerButton pressed"
+                # echo "PowerButton pressed: $2" > /dev/tty3
 
-				# make sure to fork in the background (&) otherwise pidof does not work
-		    	/usr/local/bin/waylock-env "sudoconf" &
-		    	;;
+                # make sure to fork in the background (&) otherwise pidof does not work
+                /usr/local/bin/swaylock-env "sudoconf" &
+                # /usr/local/bin/waylock-env "sudoconf" &
+                ;;
             *)
                 logger "ACPI action undefined: $2"
                 ;;
@@ -41,10 +42,10 @@ case "$1" in
     button/sleep)
         case "$2" in
             SBTN|SLPB)
-		    	# suspend-to-ram
-		    	logger "Sleep Button pressed: $2, suspending..."
-		    	zzz
-		    	;;
+                # suspend-to-ram
+                logger "Sleep Button pressed: $2, suspending..."
+                zzz
+                ;;
             *)
                 logger "ACPI action undefined: $2"
                 ;;
@@ -87,33 +88,37 @@ case "$1" in
         esac
         ;;
     button/lid)
-	case "$3" in
-		close)
-			# suspend-to-ram
-			# logger "LID closed, suspending..."
-			# zzz
-			logger "LID closed"
-			# echo "LID closed" > /dev/tty3
+    case "$3" in
+        close)
+            # suspend-to-ram
+            # logger "LID closed, suspending..."
+            # zzz
+            logger "LID closed"
+            # echo "LID closed" > /dev/tty3
 
-			# if waylock is running kill it
-			# will be run again when opening lid
-			if pidof -x "waylock" -o $$ >/dev/null; then
-    			killall waylock
-			fi
-		;;
-		open)
-    		logger "LID opened"
-			# echo "LID opened" > /dev/tty3
+            # if lock is running kill it
+            # will be run again when opening lid
+            if pidof -x "swaylock" -o $$ >/dev/null; then
+                killall swaylock
+            fi
+            # if pidof -x "waylock" -o $$ >/dev/null; then
+            #     killall waylock
+            # fi
+        ;;
+        open)
+            logger "LID opened"
+            # echo "LID opened" > /dev/tty3
 
-			# make sure to fork in the background (&) otherwise pidof does not work
-		    /usr/local/bin/waylock-env "sudoconf" &
-		;;
-		*)
-    		logger "ACPI action undefined (LID): $2"
-    		;;
-	esac
-	;;
+            # make sure to fork in the background (&) otherwise pidof does not work
+            /usr/local/bin/swaylock-env "sudoconf" &
+            # /usr/local/bin/waylock-env "sudoconf" &
+        ;;
+        *)
+            logger "ACPI action undefined (LID): $2"
+            ;;
+    esac
+    ;;
     *)
-		logger "ACPI group/action undefined: $1 / $2"
-    	;;
+        logger "ACPI group/action undefined: $1 / $2"
+        ;;
 esac
