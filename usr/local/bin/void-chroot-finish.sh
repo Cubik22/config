@@ -47,6 +47,9 @@ ln -sf /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
 # set to track upstram
 # config push --set-upstream https://github.com/lbia/config main
 
+# pip
+pip install xmpppy
+
 # java (for octave)
 # ln -s /usr/lib/jvm/openjdk11/lib/server/libjvm.so /usr/lib/jvm/openjdk11/lib/
 # ln -s /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so /usr/lib/jvm/java-1.8-openjdk/jre/lib
