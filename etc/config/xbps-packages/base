@@ -191,6 +191,8 @@ weechat-perl
 weechat-python
 weechat-ruby
 weechat-tcl
+urlview
+urlscan
 neomutt
 isync
 msmtp
