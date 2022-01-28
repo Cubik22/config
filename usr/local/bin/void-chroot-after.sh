@@ -70,8 +70,10 @@ cp -r /etc/config/fonts/nerd /usr/share/fonts
 ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
 ln -s /etc/sv/udevd /etc/runit/runsvdir/default/
-ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
+ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
+ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
+ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/

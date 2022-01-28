@@ -26,6 +26,7 @@ eudev
 linux
 linux-headers
 base-devel
+socklog-void
 mdocml
 scdoc
 texinfo
