@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# touch a file and change his permissions
+
+if [ "$#" -le 0 ]; then
+    echo "at least one parameter: the name of the file to be created"
+    return 1
+elif [ "$#" -gt 2 ]; then
+    echo "too many arguments"
+    echo "first parameter file second optional to pass to chmod"
+    return 1
+fi
+file="$1"
+touch "$file"
+if [ "$#" -eq 2 ]; then
+    chmod "$2" "$file"
+fi
