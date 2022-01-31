@@ -22,6 +22,8 @@ libseat-devel
 glu-devel
 glew-devel
 glfw-devel
+SDL2-devel
+SDL2_image-devel
 libsensors-devel
 libgit2-devel
 libssh2-devel
@@ -31,6 +33,7 @@ libcurl-devel
 cairo-devel
 fcft-devel
 crypto++-devel
+boost-devel
 libupnp-devel
 gd-devel
 geoip-devel

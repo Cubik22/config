@@ -64,6 +64,7 @@ cmake
 spdlog
 ccache
 crypto++
+boost
 meson
 ninja
 tllist
@@ -143,6 +144,8 @@ wayland-protocols
 glu
 glew
 glfw-wayland
+SDL2
+SDL2_image
 wtype
 wlr-randr
 wl-clipboard
