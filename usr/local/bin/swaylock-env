@@ -3,7 +3,7 @@
 # make swaylock also usable as root
 
 # if swaylock is already running exit
-if pidof -x "swaylock" -o $$ >/dev/null; then
+if pidof -x -o "$$" "swaylock" >/dev/null; then
     return 1
 fi
 

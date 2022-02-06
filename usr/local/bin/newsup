@@ -1,3 +1,21 @@
 #!/bin/sh
 
-/usr/bin/newsboat -x reload
+# reload newsboat in the backgroud
+
+# if an instance of newsup is already running return
+if [ "$(pidof -x -o "$$" newsup | wc -w)" -gt 1 ]; then
+    # echo "newsup already running"
+    return 1
+fi
+
+# every 5 minutes try to reload newsboat
+# can not run two process of newsboat at the same time
+while true; do
+    if ! pidof -x "newsboat" >/dev/null; then
+        /usr/bin/newsboat -x reload
+        return 0
+    fi
+    # echo "newsboat already running"
+
+    sleep 300
+done

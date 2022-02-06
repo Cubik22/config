@@ -3,7 +3,7 @@
 # make waylock also usable as root
 
 # if waylock is already running exit
-if pidof -x "waylock" -o $$ >/dev/null; then
+if pidof -x -o "$$" "waylock" >/dev/null; then
     return 1
 fi
 
