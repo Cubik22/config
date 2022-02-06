@@ -12,6 +12,7 @@ pulseaudio-devel
 pipewire-devel
 libbluetooth-devel
 pam-devel
+fontconfig-devel
 freetype-devel
 libinput-devel
 lowdown-devel
@@ -31,12 +32,14 @@ openssl-devel
 libfreeglut-devel
 libcurl-devel
 cairo-devel
-fcft-devel
 crypto++-devel
 boost-devel
+check-devel
 libupnp-devel
 gd-devel
 geoip-devel
+harfbuzz-devel
+libutf8proc-devel
 libxkbcommon-devel
 libevdev-devel
 pixman-devel

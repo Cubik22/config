@@ -62,6 +62,7 @@ clang-analyzer
 clang-tools-extra
 cmake
 spdlog
+check
 ccache
 crypto++
 boost
@@ -153,7 +154,6 @@ wlsunset
 waylock
 swaylock
 wev
-fcft
 wob
 grim
 slurp
