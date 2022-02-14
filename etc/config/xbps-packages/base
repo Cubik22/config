@@ -27,6 +27,8 @@ linux
 linux-headers
 base-devel
 socklog-void
+strace
+ltrace
 mdocml
 scdoc
 texinfo
