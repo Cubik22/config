@@ -138,7 +138,6 @@ font-material-design-icons-ttf
 fonttools
 seatd
 libinput
-libinput-gestures
 xdot
 doxygen
 xmlto
