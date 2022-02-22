@@ -58,6 +58,7 @@ pinentry-tty
 grub-x86_64-efi
 perl
 git
+git-lfs
 mercurial
 clang
 clang-analyzer
@@ -67,6 +68,7 @@ spdlog
 check
 ccache
 crypto++
+gradle
 boost
 meson
 ninja
@@ -83,6 +85,8 @@ openjdk
 openjdk-src
 openjdk11
 openjdk11-src
+openjdk17
+openjdk17-src
 lua
 luarocks
 python3
