@@ -118,7 +118,11 @@ freealut
 mesa-dri
 vulkan-loader
 mesa-vulkan-intel
+mesa-vulkan-overlay-layer
 intel-video-accel
+Vulkan-Headers
+Vulkan-Tools
+Vulkan-ValidationLayers
 terminus-font
 noto-fonts-ttf
 noto-fonts-cjk
@@ -142,8 +146,6 @@ xdot
 doxygen
 xmlto
 xmltoman
-Vulkan-Headers
-Vulkan-Tools
 wayland
 wayland-utils
 wayland-protocols
