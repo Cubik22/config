@@ -73,6 +73,7 @@ ln -s /etc/sv/udevd /etc/runit/runsvdir/default/
 ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
 ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
+ln -s /etc/sv/rngd /etc/runit/runsvdir/default/
 ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
 ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/

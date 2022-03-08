@@ -5,6 +5,7 @@ less
 pax-utils
 e2fsprogs
 dosfstools
+exfat-utils
 pciutils
 usbutils
 kbd
@@ -52,6 +53,7 @@ psmisc
 xtools
 dcron
 opendoas
+rng-tools
 gnupg2
 pinentry
 pinentry-tty
@@ -227,6 +229,7 @@ playerctl
 mpv
 mpv-mpris
 youtube-dl
+yt-dlp
 surfraw
 lynx
 w3m
