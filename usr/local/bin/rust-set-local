@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# set rust local
+
+export RUSTUP_HOME="$XDG_LIB_HOME/rustup"
+export CARGO_HOME="$XDG_LIB_HOME/cargo"

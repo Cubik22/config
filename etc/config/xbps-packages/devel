@@ -6,6 +6,7 @@ pkg-config
 lua-devel
 python3-devel
 nodejs-devel
+jq-devel
 bash-devel
 alsa-lib-devel
 pulseaudio-devel
