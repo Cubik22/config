@@ -230,6 +230,7 @@ ffmpegthumbnailer
 playerctl
 mpv
 mpv-mpris
+aria2
 youtube-dl
 yt-dlp
 surfraw
