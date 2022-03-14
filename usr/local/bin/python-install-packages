@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# install and build python packages
+
+xbps-install $(cat /etc/config/xbps-packages/python)
+
+jupyter-lab build
