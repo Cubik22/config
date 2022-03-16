@@ -13,6 +13,7 @@ pulseaudio-devel
 pipewire-devel
 libbluetooth-devel
 pam-devel
+ghostscript-devel
 fontconfig-devel
 freetype-devel
 libinput-devel

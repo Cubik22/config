@@ -48,22 +48,28 @@ repo4="https://repo-us.voidlinux.org/current"
 packages_folder="../../../etc/config/xbps-packages"
 
 # install non free repository in order to install intel-ucode
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 void-repo-nonfree
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" void-repo-nonfree
 
 # install intel-ucode
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 intel-ucode
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" intel-ucode
 
 # install normal base packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/base)
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/base")
+
+# install python base packages
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/python")
 
 # install normal devel packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/devel)
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/devel")
+
+# install fontforge devel packages
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/fontforge")
 
 # install octave base packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/octave-base)
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/octave-base")
 
 # install octave devel packages
-echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R $repo1 -R $repo2 -R $repo3 -R $repo4 $(cat $packages_folder/octave-devel)
+echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/octave-devel")
 
 # in order to have network (set manually after)
 # cp /etc/resolv.conf /mnt/etc/resolv.conf
