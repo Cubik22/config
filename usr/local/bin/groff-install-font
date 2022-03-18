@@ -80,9 +80,9 @@ OPTIONS
 
     -H  Long help.
 
-    -l  Assume prefix /usr/local/share/groff for all directories.
-
     -s  Assume prefix /usr/share/groff for all directories. (default)
+
+    -l  Assume prefix /usr/local/share/groff for all directories.
 
     -P  \033[4mdir\033[0m
         Path to the top-level groff directory if groff has been
