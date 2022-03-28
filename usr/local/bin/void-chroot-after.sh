@@ -56,8 +56,9 @@ chmod -c 700 "$runtime_dir"
 # set timezone
 # if BIOS/UEFI clock is already set to the correct time use UTC
 # if using OpenNTPD set the correct time zone
-# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 ln -sf /usr/share/zoneinfo/Etc/GMT-1 /etc/localtime
+# ln -sf /usr/share/zoneinfo/Etc/GMT-2 /etc/localtime
+# ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 # ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # cp nerd fonts
