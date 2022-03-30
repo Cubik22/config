@@ -9,9 +9,7 @@ printf "press any key to continue... "
 read -r input
 echo
 
-# set variables
-username="lollo"
-
+# set bare directory
 directory="/root/config"
 
 # clone bare repository
@@ -128,6 +126,11 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 
+# set hostname
+printf "set hostname: "
+read -r hostname
+echo "$hostname" > /etc/hostname
+
 # set root password
 echo "set password root"
 passwd root
@@ -135,6 +138,8 @@ passwd root
 chsh -s /bin/bash root
 
 # create user
+printf "set username: "
+read -r username
 useradd -m -G wheel,audio,video,input,bluetooth,_seatd,adbusers "$username"
 echo "set password $username"
 passwd "$username"
