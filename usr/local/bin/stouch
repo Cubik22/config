@@ -2,16 +2,25 @@
 
 # touch a file and change his permissions
 
-if [ "$#" -le 0 ]; then
-    echo "at least one parameter: the name of the file to be created"
-    return 1
-elif [ "$#" -gt 2 ]; then
-    echo "too many arguments"
-    echo "first parameter file second optional to pass to chmod"
+info=$(cat << EOF
+last parameter: file
+other parameters: parameters passed to chmod"
+EOF
+)
+
+if [ "$#" -lt 2 ]; then
+    echo "error: insert at least two parameters"
+    echo "$info"
     return 1
 fi
+
+scroll_param=0
+while [ "$(( scroll_param += 1 ))" -lt "$#" ]; do
+    set -- "$@" "$1"
+    shift 1
+done
 file="$1"
+shift 1
+
 touch "$file"
-if [ "$#" -eq 2 ]; then
-    chmod "$2" "$file"
-fi
+chmod "$@" "$file"
