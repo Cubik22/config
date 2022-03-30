@@ -131,6 +131,11 @@ printf "set hostname: "
 read -r hostname
 echo "$hostname" > /etc/hostname
 
+cat << EOF > /etc/hosts
+127.0.0.1   localhost
+::1         localhost
+EOF
+
 # set root password
 echo "set password root"
 passwd root
