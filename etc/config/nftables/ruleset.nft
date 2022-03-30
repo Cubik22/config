@@ -1,0 +1,4 @@
+add table ip filter
+add chain ip filter INPUT { type filter hook input priority 0; policy accept; }
+add chain ip filter FORWARD { type filter hook forward priority 0; policy accept; }
+add chain ip filter OUTPUT { type filter hook output priority 0; policy accept; }

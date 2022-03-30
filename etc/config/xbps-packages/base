@@ -9,7 +9,7 @@ exfat-utils
 pciutils
 usbutils
 kbd
-iproute2
+nftables
 iputils
 iw
 iwd
