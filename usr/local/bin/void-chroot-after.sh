@@ -77,21 +77,17 @@ ln -s /etc/sv/dcron /etc/runit/runsvdir/default/
 ln -s /etc/sv/rngd /etc/runit/runsvdir/default/
 ln -s /etc/sv/openntpd /etc/runit/runsvdir/default/
 ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
-ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
 ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
-ln -s /etc/sv/tlp /etc/runit/runsvdir/default/
 ln -s /etc/sv/wireguard /etc/runit/runsvdir/default/
+ln -s /etc/sv/bluetoothd /etc/runit/runsvdir/default/
+ln -s /etc/sv/tlp /etc/runit/runsvdir/default/
+ln -s /etc/sv/sshd /etc/runit/runsvdir/default/
 
-# set unused tty not to start by default
-# remember to change also TTYS in /etc/rc.conf
-# touch /etc/sv/agetty-tty4/down
-# touch /etc/sv/agetty-tty5/down
-# touch /etc/sv/agetty-tty6/down
-
-# set bluetooth tlp wireguard not to start by default
+# services to not start by default
+touch /etc/sv/wireguard/down
 touch /etc/sv/bluetoothd/down
 touch /etc/sv/tlp/down
-touch /etc/sv/wireguard//down
+touch /etc/sv/sshd/down
 
 # make sure bluetooth is unblocked
 rfkill unblock bluetooth
