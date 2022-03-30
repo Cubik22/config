@@ -10,6 +10,7 @@ pciutils
 usbutils
 kbd
 nftables
+iproute2
 iputils
 iw
 iwd
