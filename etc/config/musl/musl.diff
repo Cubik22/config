@@ -1,0 +1,23 @@
+diff --git a/etc/config/xbps-packages/devel b/etc/config/xbps-packages/devel
+index f793b51..a55dd0a 100644
+--- a/etc/config/xbps-packages/devel
++++ b/etc/config/xbps-packages/devel
+@@ -1,4 +1,4 @@
+-glibc-devel
++musl-devel
+ glib-devel
+ binutils-devel
+ ncurses-devel
+diff --git a/etc/xbps.d/00-repository-main.conf b/etc/xbps.d/00-repository-main.conf
+index 3f81646..b3fa087 100644
+--- a/etc/xbps.d/00-repository-main.conf
++++ b/etc/xbps.d/00-repository-main.conf
+@@ -1,4 +1,4 @@
+-repository=https://alpha.de.repo.voidlinux.org/current
+-# repository=https://repo-fi.voidlinux.org/current
+-# repository=https://mirrors.servercentral.com/voidlinux/current
+-# repository=https://repo-us.voidlinux.org/current
++repository=https://alpha.de.repo.voidlinux.org/current/musl
++# repository=https://repo-fi.voidlinux.org/current/musl
++# repository=https://mirrors.servercentral.com/voidlinux/current/musl
++# repository=https://repo-us.voidlinux.org/current/musl
