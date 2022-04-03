@@ -54,3 +54,7 @@ libnl3-devel
 librsvg-devel
 mpv-devel
 weechat-devel
+libcppunit-devel
+libsigc++-devel
+libtorrent-devel
+xmlrpc-c-devel

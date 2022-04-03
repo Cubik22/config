@@ -71,6 +71,7 @@ spdlog
 check
 ccache
 crypto++
+json-c++
 gradle
 boost
 meson
@@ -213,7 +214,6 @@ urlscan
 neomutt
 isync
 msmtp
-rtorrent
 rsync
 syncthing
 lowdown
