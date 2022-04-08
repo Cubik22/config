@@ -8,25 +8,35 @@ if [ "x${BASH_VERSION-}" != x -a "x${PS1-}" != x -a "x${BASH_COMPLETION_VERSINFO
         [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion" ] &&
             . "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion"
         if shopt -q progcomp ; then
-            bash_completion_subdir="bash-completion/bash_completion"
-            if [ -r "/usr/share/$bash_completion_subdir" ]; then
-                . "/usr/share/$bash_completion_subdir"
-            elif [ -r "/usr/local/share/$bash_completion_subdir" ]; then
-                . "/usr/local/share/$bash_completion_subdir"
-            fi
+            possible_base_dir="/usr/share /usr/local/share"
+            bash_completion_file="bash-completion/bash_completion"
+            for base_dir in $possible_base_dir; do
+                if [ -d "$base_dir" ]; then
+                    [ -r "$base_dir/$bash_completion_file" ] && . "$base_dir/$bash_completion_file"
+                    break
+                fi
+            done
+            unset possible_base_dir
+            unset base_dir
+            unset bash_completion_file
+
             complete_alias_dir="/etc/bash/bashrc.d/complete_alias"
             if [ -r "$complete_alias_dir" ]; then
                 . "$complete_alias_dir"
             fi
+            unset complete_alias_dir
+
             # not useful, done with completion_loader
             # sudo_completion_dir="/usr/share/bash-completion/completions/sudo"
             # if [ -r "$sudo_completion_dir" ]; then
             #    . "$sudo_completion_dir"
             # fi
+            # unset sudo_completion_dir
             # git_completion_dir="/usr/share/bash-completion/completions/git"
             # if [ -r "$git_completion_dir" ]; then
             #    . "$git_completion_dir"
             # fi
+            # unset git_completion_dir
         fi
     fi
 fi
