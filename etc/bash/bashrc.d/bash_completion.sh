@@ -8,25 +8,23 @@ if [ "x${BASH_VERSION-}" != x -a "x${PS1-}" != x -a "x${BASH_COMPLETION_VERSINFO
         [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion" ] &&
             . "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion"
         if shopt -q progcomp ; then
-            bash_completion_dir="/usr/share/bash-completion/bash_completion"
-            if [ -r "$bash_completion_dir" ]; then
-                # Source completion code
-                . "$bash_completion_dir"
+            bash_completion_subdir="bash-completion/bash_completion"
+            if [ -r "/usr/share/$bash_completion_subdir" ]; then
+                . "/usr/share/$bash_completion_subdir"
+            elif [ -r "/usr/local/share/$bash_completion_subdir" ]; then
+                . "/usr/local/share/$bash_completion_subdir"
             fi
             complete_alias_dir="/etc/bash/bashrc.d/complete_alias"
             if [ -r "$complete_alias_dir" ]; then
-                # Source complete alias
                 . "$complete_alias_dir"
             fi
             # not useful, done with completion_loader
             # sudo_completion_dir="/usr/share/bash-completion/completions/sudo"
             # if [ -r "$sudo_completion_dir" ]; then
-            #    # Source complete sudo (for doas)
             #    . "$sudo_completion_dir"
             # fi
             # git_completion_dir="/usr/share/bash-completion/completions/git"
             # if [ -r "$git_completion_dir" ]; then
-            #    # Source complete git (for config)
             #    . "$git_completion_dir"
             # fi
         fi
