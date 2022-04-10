@@ -4,7 +4,7 @@
 
 info=$(cat << EOF
 last parameter: file
-other parameters: parameters passed to chmod"
+other parameters: parameters passed to chmod
 EOF
 )
 
