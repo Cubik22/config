@@ -7,6 +7,7 @@ echo
 # wait for input
 printf "press any key to continue... "
 read -r input
+unset input
 echo
 
 # set bare directory
