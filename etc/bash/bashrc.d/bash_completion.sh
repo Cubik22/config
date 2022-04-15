@@ -12,8 +12,10 @@ if [ "x${BASH_VERSION-}" != x -a "x${PS1-}" != x -a "x${BASH_COMPLETION_VERSINFO
             bash_completion_file="bash-completion/bash_completion"
             for base_dir in $possible_base_dir; do
                 if [ -d "$base_dir" ]; then
-                    [ -r "$base_dir/$bash_completion_file" ] && . "$base_dir/$bash_completion_file"
-                    break
+                    if [ -r "$base_dir/$bash_completion_file" ]; then
+                        . "$base_dir/$bash_completion_file"
+                        break
+                    fi
                 fi
             done
             unset possible_base_dir
