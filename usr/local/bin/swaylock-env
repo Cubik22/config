@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# make swaylock also usable as root
+
+# if swaylock is already running exit
+if pidof -x -o "$$" "swaylock" >/dev/null; then
+    return 1
+fi
+
+export XDG_RUNTIME_DIR=/run/user/1000
+export WAYLAND_DISPLAY=wayland-1
+
+if [ "$#" -ge 1 ] && [ "$1" = "sudoconf" ]; then
+    shift 1
+    swaylock --config /root/.config/swaylock/config "$@"
+else
+    swaylock "$@"
+fi
