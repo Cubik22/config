@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# set rust global
-
-export RUSTUP_HOME="/usr/local/lib/rustup"
-export CARGO_HOME="/usr/local/lib/cargo"
