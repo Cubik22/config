@@ -58,6 +58,8 @@ rng-tools
 gnupg2
 pinentry
 pinentry-tty
+pass
+pass-git-helper
 grub-x86_64-efi
 perl
 git
