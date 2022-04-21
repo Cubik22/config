@@ -16,3 +16,10 @@ user_run_time="/run/user/$idu"
 mkdir "$user_run_time"
 chown "$idu:$idu" "/run/user/$idu"
 chmod 700 "$user_run_time"
+
+## reset newsup
+user="$(getent passwd "$idu" | cut -d : -f 1)"
+newsup_files="$(find "/home/$user/.local/share/script" -name newsup*)"
+for file in $newsup_files; do
+    echo "stop" > "$file"
+done
