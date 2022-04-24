@@ -16,41 +16,60 @@ step_backlight() {
     done
 }
 
+start_lock() {
+    # make sure to fork in the background (&) otherwise pidof does not work
+    /usr/local/bin/swaylock-env "sudoconf" >/dev/tty6 2>&1 &
+    # /usr/local/bin/waylock-env "sudoconf" >/dev/tty6 2>&1 &
+}
+
+kill_lock() {
+    # if lock is running kill it
+    # will be run again when opening lid
+    if pidof -x "swaylock" >/dev/null 2>&1; then
+        killall swaylock
+    fi
+    # if pidof -x "waylock" -o $$ >/dev/null; then
+    #     killall waylock
+    # fi
+}
+
 minspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq)
 maxspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq)
 setspeed="/sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 
 case "$1" in
     button/power)
-        # echo "PowerButton pressed!">/dev/tty6
+        # echo "Power Button pressed: $2" > /dev/tty6
         case "$2" in
             PBTN|PWRF)
-                # logger "PowerButton pressed: $2, shutting down..."
-                # shutdown -P now
-                logger "PowerButton pressed"
-                # echo "PowerButton pressed: $2" > /dev/tty6
+                logger "Power Button pressed: $2"
 
-                # make sure to fork in the background (&) otherwise pidof does not work
-                /usr/local/bin/swaylock-env "sudoconf" >/dev/tty6 2>&1 &
-                # /usr/local/bin/waylock-env "sudoconf" >/dev/tty6 2>&1 &
-                ;;
+                # shutdown the system
+                # shutdown -P now
+
+                start_lock
+            ;;
             *)
                 logger "ACPI action undefined: $2"
-                ;;
+            ;;
         esac
-        ;;
+    ;;
     button/sleep)
+        # echo "Sleep Button pressed: $2" > /dev/tty6
         case "$2" in
             SBTN|SLPB)
+                logger "Sleep Button pressed: $2"
+
                 # suspend-to-ram
-                logger "Sleep Button pressed: $2, suspending..."
-                zzz
-                ;;
+                # zzz
+
+                start_lock
+            ;;
             *)
                 logger "ACPI action undefined: $2"
-                ;;
+            ;;
         esac
-        ;;
+    ;;
     ac_adapter)
         case "$2" in
             AC|ACAD|ADP0)
@@ -64,12 +83,12 @@ case "$1" in
                         # /etc/laptop-mode/laptop-mode stop
                     ;;
                 esac
-                ;;
+            ;;
             *)
                 logger "ACPI action undefined: $2"
-                ;;
+            ;;
         esac
-        ;;
+    ;;
     battery)
         case "$2" in
             BAT0)
@@ -79,46 +98,37 @@ case "$1" in
                     00000001)   # echo "online"  >/dev/tty6
                     ;;
                 esac
-                ;;
+            ;;
             CPU0)
-                ;;
+            ;;
             *)
                 logger "ACPI action undefined: $2"
-                ;;
-        esac
-        ;;
-    button/lid)
-    case "$3" in
-        close)
-            # suspend-to-ram
-            # logger "LID closed, suspending..."
-            # zzz
-            logger "LID closed"
-            # echo "LID closed" > /dev/tty6
-
-            # if lock is running kill it
-            # will be run again when opening lid
-            if pidof -x "swaylock" >/dev/null 2>&1; then
-                killall swaylock
-            fi
-            # if pidof -x "waylock" -o $$ >/dev/null; then
-            #     killall waylock
-            # fi
-        ;;
-        open)
-            logger "LID opened"
-            # echo "LID opened" > /dev/tty6
-
-            # make sure to fork in the background (&) otherwise pidof does not work
-            /usr/local/bin/swaylock-env "sudoconf" >/dev/tty6 2>&1 &
-            # /usr/local/bin/waylock-env "sudoconf" >/dev/tty6 2>&1 &
-        ;;
-        *)
-            logger "ACPI action undefined (LID): $2"
             ;;
-    esac
+        esac
+    ;;
+    button/lid)
+        case "$3" in
+            close)
+                logger "LID closed"
+                # echo "LID closed" > /dev/tty6
+
+                # suspend-to-ram
+                # zzz
+
+                kill_lock
+            ;;
+            open)
+                logger "LID opened"
+                # echo "LID opened" > /dev/tty6
+
+                start_lock
+            ;;
+            *)
+                logger "ACPI action undefined (LID): $2"
+            ;;
+        esac
     ;;
     *)
         logger "ACPI group/action undefined: $1 / $2"
-        ;;
+    ;;
 esac

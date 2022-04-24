@@ -146,7 +146,7 @@ chsh -s /bin/bash root
 # create user
 printf "set username: "
 read -r username
-useradd -m -G wheel,audio,video,input,bluetooth,_seatd,adbusers "$username"
+useradd -m -G wheel,audio,video,input,plugdev,bluetooth,_seatd,adbusers "$username"
 echo "set password $username"
 passwd "$username"
 # set user default shell
