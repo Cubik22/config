@@ -2,6 +2,7 @@ base-minimal
 ncurses
 file
 less
+lesspipe
 pax-utils
 e2fsprogs
 dosfstools
