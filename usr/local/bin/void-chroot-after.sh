@@ -6,6 +6,7 @@ echo
 
 # wait for input
 printf "press any key to continue... "
+# shellcheck disable=SC2034
 read -r input
 unset input
 echo
@@ -23,6 +24,7 @@ config () {
 
 # backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
+# shellcheck disable=SC2016
 config checkout 2>&1 | grep -P '\t' | awk '{print $1}' | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
 echo "checking out"
 config checkout
@@ -160,6 +162,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Void
 # after changing /etc/default/grub run update-grub
 
 # create fstab file from the mounted system
+# shellcheck disable=SC2129
 cat /proc/mounts >> /etc/fstab
 
 # modify /etc/fstab

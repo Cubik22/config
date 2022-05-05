@@ -9,6 +9,7 @@ echo
 
 # wait for input
 printf "press any key to continue... "
+# shellcheck disable=SC2034
 read -r input
 unset input
 echo
@@ -55,21 +56,27 @@ echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" intel-ucode
 
 # install normal base packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/base")
 
 # install python base packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/python")
 
 # install normal devel packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/devel")
 
 # install fontforge devel packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/fontforge")
 
 # install octave base packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/octave-base")
 
 # install octave devel packages
+# shellcheck disable=SC2046
 echo | XBPS_ARCH=x86_64 xbps-install -S -y -r /mnt -R "$repo1" -R "$repo2" -R "$repo3" -R "$repo4" $(cat "$packages_folder/octave-devel")
 
 # in order to have network (set manually after)
