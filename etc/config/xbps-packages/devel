@@ -33,6 +33,7 @@ libssh2-devel
 openssl-devel
 libfreeglut-devel
 libcurl-devel
+libssh-devel
 cairo-devel
 crypto++-devel
 boost-devel
