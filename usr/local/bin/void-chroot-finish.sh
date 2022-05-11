@@ -1,20 +1,16 @@
 #!/bin/sh
 
-# set variables
-directory="/root/config"
+# config
+# config_dir="/root/config"
 
 # create temporary alias
-config () {
-    /usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
-}
+# rcon () {
+#     /usr/bin/git --git-dir="$config_dir"/ --work-tree="/" "$@"
+# }
 
-# import gpg key
-# echo "------------------------ type the number of your identity -------------------------"
-# gpg --search-keys $email
-
-# trust key
-# echo "-------------------- type 'trust', '5', 'y', 'primary', 'save' --------------------"
-# gpg --edit-key $email
+# set to track upstram
+# done later
+# rcon push --set-upstream https://github.com/lbia/config main
 
 # rustup cargo env
 export RUSTUP_HOME="/usr/local/lib/rustup"
@@ -35,17 +31,7 @@ rustup default stable
 # --locked require Cargo.lock is up to date
 # --frozen require Cargo.lock and cache are up to date
 # cargo install --all-features --locked --frozen
-cargo install cargo-update rbw
-
-# link rbw rbw-agent for doas config
-ln -sf /usr/local/lib/cargo/bin/rbw /usr/local/bin/
-ln -sf /usr/local/lib/cargo/bin/rbw-agent /usr/local/bin/
-
-# rbw register
-# rbw unlock
-
-# set to track upstram
-# config push --set-upstream https://github.com/lbia/config main
+cargo install cargo-update
 
 # java (for octave)
 # ln -s /usr/lib/jvm/openjdk11/lib/server/libjvm.so /usr/lib/jvm/openjdk11/lib/

@@ -12,29 +12,29 @@ unset input
 echo
 
 # set bare directory
-directory="/root/config"
+config_dir="/root/config"
 
 # clone bare repository
-git clone --bare /root/cloned-config "$directory"
+git clone --bare /root/cloned-config "$config_dir"
 
 # create temporary alias
-config () {
-    /usr/bin/git --git-dir="$directory"/ --work-tree="/" "$@"
+rcon () {
+    /usr/bin/git --git-dir="$config_dir"/ --work-tree="/" "$@"
 }
 
 # backup of configs while copying files in the appropiate places
 echo "backing up pre-existing config files"
 # shellcheck disable=SC2016
-config checkout 2>&1 | grep -P '\t' | awk '{print $1}' | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
+rcon checkout 2>&1 | grep -P '\t' | awk '{print $1}' | xargs -i sh -c 'mkdir -pv "/root/backup/""$(dirname {})"; mv "/"{} "/root/backup/"{};'
 echo "checking out"
-config checkout
+rcon checkout
 
 # set to not show untracked files
-config config status.showUntrackedFiles no
+rcon config status.showUntrackedFiles no
 
 # remove README from HOME and set git to not track in locale
 rm -f /README.md
-config update-index --assume-unchanged /README.md
+rcon update-index --assume-unchanged /README.md
 
 # integrate alsa in pipewire
 mkdir -p /etc/alsa/conf.d
