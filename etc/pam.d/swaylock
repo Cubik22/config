@@ -5,3 +5,5 @@
 
 # by default it is uncommented but it does not work
 # auth include login
+
+auth include system-auth
