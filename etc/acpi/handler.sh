@@ -16,21 +16,50 @@ step_backlight() {
     done
 }
 
+get_locker() {
+    opt_dir="/var/opt"
+    [ ! -d "$opt_dir" ] && mkdir -p "$opt_dir"
+    locker_file="$opt_dir/locker"
+    [ ! -f "$locker_file" ] && echo "swaylock" > "$locker_file"
+    cat "$locker_file"
+}
+
 start_lock() {
     # make sure to fork in the background (&) otherwise pidof does not work
-    /usr/local/bin/swaylock-env "sudoconf" >/dev/tty6 2>&1 &
-    # /usr/local/bin/waylock-env "sudoconf" >/dev/tty6 2>&1 &
+    locker="$(get_locker)"
+    if [ "$locker" = "waylock" ]; then
+        /usr/local/bin/waylock-env "sudoconf" >/dev/tty6 2>&1 &
+    else
+        /usr/local/bin/swaylock-env "sudoconf" >/dev/tty6 2>&1 &
+    fi
 }
 
 kill_lock() {
     # if lock is running kill it
     # will be run again when opening lid
-    if pidof -x "swaylock" >/dev/null 2>&1; then
-        killall swaylock
+    locker="$(get_locker)"
+    if [ "$locker" = "waylock" ]; then
+        if pidof -x "waylock" -o $$ >/dev/null; then
+            killall waylock
+        fi
+    else
+        if pidof -x "swaylock" >/dev/null 2>&1; then
+            killall swaylock
+        fi
     fi
-    # if pidof -x "waylock" -o $$ >/dev/null; then
-    #     killall waylock
-    # fi
+}
+
+chech_lid_lock() {
+    opt_dir="/var/opt"
+    [ ! -d "$opt_dir" ] && mkdir -p "$opt_dir"
+    lid_lock_file="$opt_dir/lid-lock"
+    [ ! -f "$lid_lock_file" ] && echo "true" > "$lid_lock_file"
+    lid_lock="$(cat "$lid_lock_file")"
+    if [ "$lid_lock" = "false" ]; then
+        return 1
+    else
+        return 0
+    fi
 }
 
 minspeed=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq)
@@ -115,13 +144,13 @@ case "$1" in
                 # suspend-to-ram
                 # zzz
 
-                kill_lock
+                chech_lid_lock && kill_lock
             ;;
             open)
                 logger "LID opened"
                 # echo "LID opened" > /dev/tty6
 
-                start_lock
+                chech_lid_lock && start_lock
             ;;
             *)
                 logger "ACPI action undefined (LID): $2"
